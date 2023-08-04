@@ -44,6 +44,7 @@ import siddhant from "../assets/credits/siddhant.png";
 const team = shuffle([
   { name: "Siddhant Kameswar", role: ["AI Developer", "Tutor", "W"] /* also did nothing */ , pfp: siddhant, github: "grimsteel" },
   { name: "Ruhan Gupta", role: ["AI Developer", "Operations Lead", ""], pfp: ruhan, github: "imgroot2"},
+  { name: "Vedanti Patil", role: ["Lead Tutor", "Marketing Lead"], pfp: correctvedanti, github: "likevee"},
 ]).sort((a, b) => b.role.length - a.role.length);
 
 function shuffle<T>(arr: T[]) {
