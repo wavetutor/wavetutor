@@ -12,7 +12,7 @@
                         <h3 class="mb-4 text-2xl font-semibold">1-on-1 Tutoring</h3>
                         <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">High-quality tutoring for an affordable price.</p>
                         <div class="flex justify-center items-baseline my-8">
-                            <span class="mr-2 text-5xl font-extrabold">$40</span>
+                            <span class="mr-2 text-5xl font-extrabold">$30</span>
                             <span class="text-gray-500 dark:text-gray-400">/session</span>
                         </div>
                         <!-- List -->
@@ -33,7 +33,7 @@
                                 <span>Weekly homework</span>
                             </li>
                         </ul>
-                        <a href="#" class="text-white hover:bg-primary/60 focus:ring-4 focus:ring-primary/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900 bg-primary">Get started</a>
+                        <a href="#" class="text-white hover:bg-primary/60 focus:ring-4 focus:ring-primary/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900 bg-primary">Sign up</a>
                     </div>
                 </div>
             </div>
