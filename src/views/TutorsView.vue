@@ -14,7 +14,7 @@
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
                     <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">Subjects offered</h2>
-                    <p class="font-light">We offer a wide range of subjects and topics for tutoring.</p>
+                    <p class="font-light">We offer a wide range of subjects and topics for tutoring, and <span class="font-bold">more to come soon! </span></p>
                     <p class="mb-6 font-medium"> If you don't see a subject you're looking for, please contact us and we'll see if we can help. </p>
                     <div class="mx-auto">
                         <div class="grid grid-cols-2 lg:grid-cols-4">
@@ -30,9 +30,9 @@
     import TutorSubjects from "../components/TutorSubjects.vue";
     import Tutor from "../components/Tutor.vue";
     const subjects = [
-    {subject: "Math", topics: ["Algebra", "Geometry", "Trigonometry", "Pre-Calculus", "Calculus", "Statistics", "Probability"]},
-    {subject: "Science", topics: ["Biology", "Chemistry", "Physics", "Psychology", "Neurology"]},
-    {subject: "Other", topics: ["Debate", "Chess"]},
+    {subject: "Math", topics: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Probability", "SAT Math"]},
+    {subject: "Science", topics: ["Biology", "Chemistry", "Physics", "Psychology", "Neuroscience", "Human Anatomy & Physiology"]},
+    {subject: "Other", topics: ["Writing/English", "Debate", "Chess"]},
     ];
     const tutors = [
     {
@@ -46,7 +46,7 @@
     {
         id: "nikhil",
         name: "Nikhil Gupta",
-        bio: "Hey there! My name is Nikhil, a rising freshman at Westwood High School. I'm passionate about math, programming, writing, and chess.  In my free time, I enjoy reading, writing, talking to friends, and listenting to music.",
+        bio: "Hello! My name is Nikhil, a rising freshman at Westwood High School. I'm passionate about math, programming, writing, and chess.  In my free time, I enjoy reading, writing, talking to friends, and listenting to music.",
         picture: 'nikhil.jpg',
         accomplishments: ["Editor-In-Chief of School Newspaper,", "Student Council Freshman Representative", "4.0 GPA in 2022-2023 School Year", ],
         subjects: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Chess", "Writing/English", "Debate"]
