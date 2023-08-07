@@ -33,7 +33,7 @@
                                 <span>Weekly homework</span>
                             </li>
                         </ul>
-                        <a href="#" class="text-white hover:bg-primary/60 focus:ring-4 focus:ring-primary/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900 bg-primary">Sign up</a>
+                        <a href="https://forms.gle/tXpQbQdPqAnfebT78" class="text-white hover:bg-primary/60 focus:ring-4 focus:ring-primary/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900 bg-primary">Sign up</a>
                     </div>
                 </div>
             </div>
