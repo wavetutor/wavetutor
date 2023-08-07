@@ -25,12 +25,10 @@
 
 <script setup lang="ts">
 import ruhan from "../assets/credits/ruhan.jpg";
-import siddhant from "../assets/credits/siddhant.png";
 import vedanti from "../assets/credits/vedanti.png";
 import nikhil from "../assets/credits/nikhil.jpg";
 
 const team = shuffle([
-  { name: "Siddhant Kameswar", role: "AI Developer, Tutor, Web Development", rank: 3, pfp: siddhant, github: "grimsteel" },
   { name: "Ruhan Gupta", role: "Operations Lead, AI Lead, Web Development", rank: 4, pfp: ruhan, github: "imgroot2"},
   { name: "Vedanti Patil", role: "Lead Tutor, Marketing Lead", rank: 2, pfp: vedanti, github: "likevee" },
   { name: "Nikhil Gupta", role: "Lead Tutor, Marketing Lead", rank: 2, pfp: nikhil, github: "NikG978" },
