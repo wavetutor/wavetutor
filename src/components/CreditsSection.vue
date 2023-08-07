@@ -29,7 +29,7 @@ import vedanti from "../assets/credits/vedanti.png";
 import nikhil from "../assets/credits/nikhil.jpg";
 
 const team = shuffle([
-  { name: "Ruhan Gupta", role: "Operations Lead, AI Lead, Web Development", rank: 4, pfp: ruhan, github: "imgroot2"},
+  { name: "Ruhan Gupta", role: "Operations Lead, Web Dev Lead", rank: 4, pfp: ruhan, github: "imgroot2"},
   { name: "Vedanti Patil", role: "Lead Tutor, Marketing Lead", rank: 2, pfp: vedanti, github: "likevee" },
   { name: "Nikhil Gupta", role: "Lead Tutor, Marketing Lead", rank: 2, pfp: nikhil, github: "NikG978" },
 ]).sort((a, b) => b.rank - a.rank);
