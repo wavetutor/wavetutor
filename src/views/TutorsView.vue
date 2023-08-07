@@ -7,7 +7,7 @@
                         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Tutors</h2>
                     </div> 
                     <div class="grid gap-8 mb-6 lg:mb-8 grid-cols-2 md:grid-cols-3 w-fit mx-auto">
-                        <Tutor v-for="tutor in tutors" :key="tutor.name" :id="tutor.id" :name="tutor.name" :bio="tutor.bio" :picture="tutor.picture" :accomplishments="tutor.accomplishments" :subjects="tutor.subjects" />
+                        <Tutor v-for="tutor in tutors" :key="tutor.name" :id="tutor.id" :name="tutor.name" :bio="tutor.bio" :picture="'../src/assets/credits/' + tutor.picture" :accomplishments="tutor.accomplishments" :subjects="tutor.subjects" />
                     </div>  
                 </div>
                 </section>
@@ -40,10 +40,18 @@
         id: "vedanti",
         name: "Vedanti Patil",
         bio: "Hey there! I'm Vedanti, a rising freshman with an interest in life science. I'm primarily passionate about biology and neuroscience. I'm also enthusiastic about chemistry and psychology! In my free time, I enjoy creating art, spending time with my friends, and participating in my school publication.",
-        picture: "../src/assets/credits/vedanti.png",
+        picture: "vedanti.png",
         accomplishments: ["State Champion for UIL District Science", "Placed 10th nationally in Intermediate Brain Bee (organized by NSF)", "State Champion for Bio Process Lab (organized by Science Olympiad)"],
         subjects: ["Biology", "Chemistry", "Psychology", "Neuroscience", "Human Anatomy & Physiology"]
     },
+    {
+        id: "nikhil",
+        name: "Nikhil Gupta",
+        bio: "Hey there! My name is Nikhil, a rising freshman at Westwood High School. I'm passionate about math, programming, writing, and chess.  In my free time, I enjoy reading, writing, talking to friends, and listenting to music.",
+        picture: "nikhil.jpg",
+        accomplishments: ["Editor-In-Chief of School Newspaper,", "Student Council Freshman Representative", "4.0 GPA in 2022-2023 School Year", ],
+        subjects: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Chess", "Writing/English", "Debate"]
+    }
     ];
     
 </script>   
