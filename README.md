@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Tutor4Future</h1>
+  <h1>Wave Tutor</h1>
   <h2>This isn't like other tutoring.</h2>
   <br>
   <p>Enter Tutor4Future- innovative, AI-driven tutoring to propel your learning like never before.</p>
