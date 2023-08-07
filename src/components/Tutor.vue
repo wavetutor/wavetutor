@@ -11,11 +11,11 @@
                     <img :src="image" alt="Tutor photo" class="w-36 h-36 rounded-lg mx-auto mb-2">
                     <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white text-center">{{ name }}</h2>
                     <p class="mb-4 font-light">{{ bio }}</p>
-                    <p class="mb-4 font-medium text-white"> Accomplishments: </p>
+                    <p class="mb-4 font-medium"> Accomplishments: </p>
                     <ul class="mb-4 font-light ml-2" style="list-style-type: disc;">
                         <li v-for="accomplishment in accomplishments" :key="accomplishment">{{ accomplishment }}</li>
                     </ul>
-                    <p class="mb-4 font-medium text-white"> Subjects: </p>
+                    <p class="mb-4 font-medium"> Subjects: </p>
                     <ul class="mb-4 font-light ml-2" style="list-style-type: disc;">
                         <li v-for="subject in subjects" :key="subject">{{ subject }}</li>
                     </ul>
