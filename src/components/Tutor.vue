@@ -30,6 +30,7 @@ import { onMounted } from "vue";
 import vedanti from "../assets/credits/vedanti.png";
 import nikhil from "../assets/credits/nikhil.jpg";
 import rishabh from "../assets/credits/rishabh.jpg";
+import aaron from "../assets/credits/aaron.png";
 
 var image = "";
 
@@ -42,14 +43,22 @@ const props = defineProps<{
     subjects: string[],
 }>();
 
-if(props.id == "vedanti") {
-    image = vedanti;
-} else if(props.id == "nikhil") {
-    image = nikhil;
-} else if(props.id == "rishabh") {
-    image = rishabh;
-} else {
-    image = props.picture;
+switch(props.id) {
+    case "vedanti":
+        image = vedanti;
+        break;
+    case "nikhil":
+        image = nikhil;
+        break;
+    case "rishabh":
+        image = rishabh;
+        break;
+    case "aaron":
+        image = aaron;
+        break;
+    default:
+        image = props.picture;
+        break;
 }
 
 

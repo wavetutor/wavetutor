@@ -28,12 +28,14 @@ import ruhan from "../assets/credits/ruhan.jpg";
 import vedanti from "../assets/credits/vedanti.png";
 import nikhil from "../assets/credits/nikhil.jpg";
 import rishabh from "../assets/credits/rishabh.jpg";
+import aaron from "../assets/credits/aaron.png";
 
 const team = shuffle([
   { name: "Ruhan Gupta", role: "Operations Lead, Web Dev Lead", rank: 4, pfp: ruhan, github: "imgroot2"},
-  { name: "Vedanti Patil", role: "Lead Tutor, Marketing Lead", rank: 2, pfp: vedanti, github: "likevee" },
+  { name: "Vedanti Patil", role: "Lead Tutor, Marketing Lead", rank: 3, pfp: vedanti, github: "likevee" },
   { name: "Nikhil Gupta", role: "Lead Tutor, Marketing Lead", rank: 2, pfp: nikhil, github: "NikG978" },
   { name: "Rishabh Susarla", role: "Tutor", rank: 1, pfp: rishabh, github: "" },
+  { name: "Aaron Fan", role: "Tutor", rank: 1, pfp: aaron, github: ""}
 
 ]).sort((a, b) => b.rank - a.rank);
 
