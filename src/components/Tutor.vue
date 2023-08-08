@@ -29,6 +29,7 @@
 import { onMounted } from "vue";
 import vedanti from "../assets/credits/vedanti.png";
 import nikhil from "../assets/credits/nikhil.jpg";
+import rishabh from "../assets/credits/rishabh.jpg";
 
 var image = "";
 
@@ -45,6 +46,8 @@ if(props.id == "vedanti") {
     image = vedanti;
 } else if(props.id == "nikhil") {
     image = nikhil;
+} else if(props.id == "rishabh") {
+    image = rishabh;
 } else {
     image = props.picture;
 }

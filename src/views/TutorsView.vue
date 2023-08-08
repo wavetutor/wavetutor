@@ -50,6 +50,13 @@
         picture: 'nikhil.jpg',
         accomplishments: ["Editor-In-Chief of School Newspaper,", "Student Council Freshman Representative", "4.0 GPA in 2022-2023 School Year", ],
         subjects: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Chess", "Writing/English", "Debate"]
+    },
+    { 
+        id: "rishabh", 
+        name: "Rishabh Susarla", 
+        bio: "Hey, my name is Rishabh, and I'm a rising freshman at Westwood High School. I really enjoy doing math and physics, and I'm really excited to go deeper with these topics with you! In my free time I enjoy doing things like playing video games, talking with friends, listening to music, and procrastinating for hours at a time.", 
+        picture: 'rishabh.jpg', 
+        accomplishments: ["4.0 GPA in 2022-2023 School Year", "790 Math SAT Score in 8th Grade", "Science Bowl Practice Team - 2022-2023"], subjects: ["Prealgebra", "Algebra 1", "Geometry", "Algebra 2", "Probability", "SAT Math", "Physics"] 
     }
     ];
     
