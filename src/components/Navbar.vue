@@ -19,6 +19,7 @@
         <NavbarLink to="/">Home</NavbarLink>
         <NavbarLink to="/tutors/">Tutors</NavbarLink>
         <NavbarLink to="/pricing/">Pricing</NavbarLink>
+        <NavbarLink to="/contact/">Contact</NavbarLink>
       </ul>
     </div>
     </div>

@@ -3,6 +3,7 @@ import HomeView from './views/HomeView.vue';
 import TutorsView from './views/TutorsView.vue';
 import PricingView from './views/PricingView.vue'; 
 import PaymentView from './views/PaymentView.vue';
+import ContactView from './views/ContactView.vue';
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ export const router = createRouter({
       path: '/payment/',
       name: 'payment',
       component: PaymentView
+    },
+    {
+      path: '/contact/',
+      name: 'contact',
+      component: ContactView
     },
   ]
 });
