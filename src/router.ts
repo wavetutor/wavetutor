@@ -33,5 +33,12 @@ export const router = createRouter({
       name: 'contact',
       component: ContactView
     },
+    {
+      path: '/signup/',
+      component: HomeView,
+      beforeEnter(to, from, next) {
+        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSehqFMbQfHT-p-fqBv1kgvbQaFU4MbHoRqs1XIyVn-U0btlmQ/viewform';
+      }
+    }
   ]
 });
