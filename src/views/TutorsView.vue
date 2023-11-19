@@ -65,7 +65,7 @@
         bio: "Hey! I'm Aaron, and I'm a rising freshman who loves learning math and competing in math competitions. In my free time I like to procrastinate and read.", 
         picture: "aaron.png", 
         accomplishments: ["2x AIME Qualifier (2022, 2023)", "Mathcounts State 2nd Place Team (2022, 2023) and Top 13 (2023) ", "Science Bowl Team 2023"], 
-        subjects: ["Prealgebra", "Algebra 1", "Geometry", "Algebra 2", "Probability", "SAT math"]
+        subjects: ["Prealgebra", "Algebra 1", "Geometry", "Algebra 2", "Probability", "SAT Math"]
     }
     ];
     
