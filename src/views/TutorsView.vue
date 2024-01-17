@@ -46,15 +46,15 @@
     {
         id: "nikhil",
         name: "Nikhil Gupta",
-        bio: "Hello! My name is Nikhil, a rising freshman at Westwood High School. I'm passionate about math, programming, writing, and chess.  In my free time, I enjoy reading, writing, talking to friends, and listenting to music.",
+        bio: "Hello! My name is Nikhil, and I am a rising freshman at Westwood High School. I'm passionate about math, programming, writing, and chess. I enjoy reading, writing, talking to friends, and listening to music in my free time.",
         picture: 'nikhil.jpg',
-        accomplishments: ["Editor-In-Chief of School Newspaper,", "Student Council Freshman Representative", "4.0 GPA in 2022-2023 School Year", ],
+        accomplishments: ["Editor-In-Chief of School Newspaper,", "Student Council Freshman Representative", "4.0 GPA in 2022-2023 School Year", "Success at debate tournaments on the national circuit", ],
         subjects: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Chess", "Writing/English", "Debate"]
     },
     { 
         id: "rishabh", 
         name: "Rishabh Susarla", 
-        bio: "Hey, my name is Rishabh, and I'm a rising freshman at Westwood High School. I really enjoy doing math and physics, and I'm really excited to go deeper with these topics with you! In my free time I enjoy doing things like playing video games, talking with friends, listening to music, and procrastinating for hours at a time.", 
+        bio: "Hey! My name is Rishabh, and I'm a rising freshman at Westwood High School. I enjoy doing math and physics, and I'm really excited to go deeper with these topics with you! I enjoy playing video games, talking with friends, listening to music, and procrastinating for hours in my free time.", 
         picture: 'rishabh.jpg', 
         accomplishments: ["4.0 GPA in 2022-2023 School Year", "790 Math SAT Score in 8th Grade", "Science Bowl Practice Team - 2022-2023"], 
         subjects: ["Prealgebra", "Algebra 1", "Geometry", "Algebra 2", "Probability", "SAT Math", "Physics"] 
@@ -62,9 +62,9 @@
     { 
         id: "aaron", 
         name: "Aaron Fan", 
-        bio: "Hey! I'm Aaron, and I'm a rising freshman who loves learning math and competing in math competitions. In my free time I like to procrastinate and read.", 
+        bio: "Hey! I'm Aaron, and I'm a freshman who loves learning math and competing in math competitions. In my free time I like to procrastinate and read.", 
         picture: "aaron.png", 
-        accomplishments: ["2x AIME Qualifier (2022, 2023)", "Mathcounts State 2nd Place Team (2022, 2023) and Top 13 (2023) ", "Science Bowl Team 2023"], 
+        accomplishments: ["3x AIME Qualifier (2022, 2023, 2024)", "Mathcounts State 2nd Place Team (2022, 2023) and Top 13 (2023) ", "Science Bowl Team 2023"], 
         subjects: ["Prealgebra", "Algebra 1", "Geometry", "Algebra 2", "Probability", "SAT Math"]
     }
     ];
