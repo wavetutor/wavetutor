@@ -1,9 +1,53 @@
 <template>
     <main class="bg-white dark:bg-gray-900">
-        <section>
-            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-                <h1 class="mb-4 text-5xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">This isn't like <span class="pb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary  to-blue-700 block">other tutoring.</span></h1>
-                <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Enter Wave Tutor: conversational tutoring to propel your learning like never before.</p>
+
+        <section class="bg-white dark:bg-gray-900">
+    <div class="grid max-w-screen-xl lg:h-[70vh] px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7 mb-10">
+            <h1 class="text-center lg:text-left mb-4 text-5xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-7xl dark:text-white">This isn't like <span class="pb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary  to-blue-700 block">other tutoring.</span></h1>
+            <p class=" text-center lg:text-left max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Enter Wave Tutor: conversational tutoring to propel learning like never before.</p>
+            <div class="text-center lg:text-left">
+            <router-link to="/pricing/" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                Pricing
+                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </router-link>
+            <a href="https://forms.gle/tXpQbQdPqAnfebT78" class="transition-colors inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-secondary focus:ring-4 focus:ring-primary/50">
+                Sign Up
+            </a> 
+        </div>
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex justify-center items-center mb-10">
+            <img :src="Logo" alt="Wave Tutor Logo" class="rounded-full h-80 w-80" style="  outline: 6px solid white;outline-offset: -10px;">
+        </div>                
+    </div>
+</section>
+<section class="bg-white dark:bg-gray-900">
+  <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+      <figure class="max-w-screen-md mx-auto">
+          <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+          </svg> 
+          <blockquote>
+              <p class="text-xl font-medium text-gray-900 dark:text-white">"Wave Tutor is a great service for online tutoring. Our son Varun, 13, has been taking Math and Language Arts from them since August 2023. He is doing online flex education because of his medical treatment. Wave Tutor has helped him keep up with school and ensure he is not losing out on opportunities he would normally get from in-person school. He likes working with Vedanti and Nikhil, who are patient, friendly and knowledgeable. They are also flexible and accommodating with his schedule and needs. We highly recommend Wave Tutor to anyone."</p>
+          </blockquote>
+          <figcaption class="flex items-center justify-center mt-6 space-x-3">
+              <!-- <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture"> -->
+              <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                  <div class="pr-3 font-medium text-gray-900 dark:text-white">Suraj & Jyoti Varma</div>
+                  <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Parents</div>
+              </div>
+          </figcaption>
+      </figure>
+  </div>
+</section>
+
+        <!-- <section>
+            <div class="flex flex-row">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16 lg:px-12">
+                <h1 class="mb-4 text-5xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-8xl dark:text-white">This isn't like <span class="pb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary  to-blue-700 block">other tutoring.</span></h1>
+                <p class="tracking-tight leading-none text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Enter Wave Tutor: conversational tutoring to propel your learning like never before.</p>
+            </div>
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16 lg:px-12">
                 <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                     <router-link to="/pricing/" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Pricing
@@ -14,7 +58,11 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </div>
+        </section> -->
+
+
+
         <section>
             <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                 <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
@@ -40,4 +88,5 @@
 import { ref, computed, onMounted } from 'vue';
 import FeaturesSection from "../components/FeaturesSection.vue";
 import CreditsSection from "../components/CreditsSection.vue";
+import Logo from "../assets/logo.svg";
 </script>
