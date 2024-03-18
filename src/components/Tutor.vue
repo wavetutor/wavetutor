@@ -30,7 +30,7 @@ import { onMounted } from "vue";
 import vedanti from "../assets/credits/vedanti.png";
 import nikhil from "../assets/credits/nikhil.jpg";
 import rishabh from "../assets/credits/rishabh.jpg";
-import aaron from "../assets/credits/aaron.png";
+import aaron from "../assets/credits/aaron.jpg";
 
 var image = "";
 
