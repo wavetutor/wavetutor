@@ -1,24 +1,68 @@
 <template>
-    <main class="h-full">
-        <section class="bg-white dark:bg-gray-900 flex items-center justify-center flex-col h-full">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-                <div class="max-w-screen-lg sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">Making a payment</h2>
-                    <p class="mb-4 font-light text-gray-500">Thank you for being a customer of Wave Tutor! We know there are a lot of different tutoring websites and businesses out there, and we're glad you chose us to tutor you/your child. </p>
-                    <p class="mb-4 font-medium text-gray-500">After every session, we kindly ask you to pay $30 for the session. If you cannot pay, please coordinate with your tutor to make accommodations. Please make these arrangements before the session starts.</p>
-                    <div class="bg-cyan-800 dark:bg-cyan-950 rounded-lg p-5">
-                        <h2 class="text-xl mb-2 text-white">PayPal Details: </h2>
-                        <p class="mb-4 text-white"><span class="font-medium">$30</span> to @ruhangupta - <a href="https://paypal.me/ruhangupta" class="inline-flex items-center font-medium underline text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
-                        paypal.me/ruhangupta
-                        <svg class="w-6 h-6 relative" style="top: 1.2px;" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    </a></p>    
-                        <p class="text-white"> Include <span class="font-medium">"Wave Tutor - $30 - (Student Name)"</span> in the description.</p>
-                        <br>
-                        <p class="text-white">Please select the "Friends & Family" option to waive the PayPal fees.</p>
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+  <main class="h-full">
+    <section
+      class="bg-white dark:bg-zinc-900 flex items-center justify-center flex-col min-h-full"
+    >
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="max-w-screen-lg sm:text-lg text-gray-800 dark:text-gray-400">
+          <!-- Title -->
+          <h2
+            class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white"
+          >
+            Making payments to Wave Tutor
+          </h2>
+
+          <!-- Intro paragraphs -->
+          <p class="mb-4 sm:text-2xl text-lg font-light text-gray-700 dark:text-gray-500">
+            Thank you for being a customer of Wave Tutor! We know there are a
+            lot of different tutoring businesses out there, and we’re glad you
+            chose us to tutor you/your child.
+          </p>
+          <p class="mb-6 sm:text-2xl text-lg font-medium text-gray-700 dark:text-gray-500">
+            We kindly request you to make payments shortly after each session.
+            Please make sure you are able to pay before the session starts.
+          </p>
+
+          <!-- PayPal card -->
+          <div
+            class="bg-gray-100 dark:bg-zinc-800 rounded-lg p-5"
+          >
+            <h3 class="text-2xl mb-2 font-bold text-gray-900 dark:text-white">
+              PayPal Details:
+            </h3>
+            <p class="mb-4 text-gray-800 dark:text-white">
+              <span class="font-medium">$30</span> to @ruhangupta –
+              <a
+                href="https://paypal.me/ruhangupta"
+                class="inline-flex items-center font-medium underline text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700"
+              >
+                paypal.me/ruhangupta
+              </a>
+            </p>
+            <p class="text-gray-800 dark:text-white">
+              Include <span class="font-medium"
+                >"Wave Tutor - $30 - (Student Name)"</span
+              >
+              in the description.
+            </p>
+            <br />
+            <p class="text-gray-800 dark:text-white">
+              Please select the "Friends & Family" option to waive the PayPal
+              fees.
+            </p>
+          </div>
+
+          <!-- Thank you gradient -->
+          <h2
+            class="mb-4 text-6xl font-extrabold text-gray-900 dark:text-white [text-wrap:balance] text-center mt-8"
+          >
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-tr from-primary to-blue-700"
+              >Thank you!</span
+            >
+          </h2>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>

@@ -1,11 +1,11 @@
 <template>
     <main class="grow">
-        <section class="bg-white dark:bg-gray-900 min-h-full">
-            <section class="bg-white dark:bg-gray-900">
+        <section class="bg-white dark:bg-zinc-900 min-h-full">
+            <section class="bg-white dark:bg-zinc-900">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
                     <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Tutors</h2>
-                        <p class="text-md tracking-tight text-gray-900 dark:text-white font-medium">Click on a tutor to learn about their qualifications.</p>
+                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Our Tutors</h2>
+                        <p class="text-md tracking-tight text-zinc-900 dark:text-white font-medium">Click on a tutor to learn about their qualifications.</p>
                     </div> 
                     <div class="grid gap-8 mb-6 lg:mb-8 grid-cols-2 md:grid-cols-3 w-fit mx-auto">
                         <Tutor v-for="tutor in tutors" :key="tutor.name" :id="tutor.id" :name="tutor.name" :bio="tutor.bio" :picture="tutor.picture" :accomplishments="tutor.accomplishments" :subjects="tutor.subjects" />
@@ -14,7 +14,7 @@
                 </section>
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">Subjects offered</h2>
+                    <h2 class="mb-4 text-4xl tracking-tight font-bold text-zinc-900 dark:text-white">Subjects offered</h2>
                     <p class="font-light">We offer a wide range of subjects and topics for tutoring, and <span class="font-bold">more to come soon! </span></p>
                     <p class="mb-6 font-medium"> If you don't see a subject you're looking for, please contact us and we'll see if we can help. </p>
                     <div class="mx-auto">
@@ -27,13 +27,13 @@
         </section>
     </main>
 </template>
-<script setup lang="ts">
+<script setup lang="js">
     import TutorSubjects from "../components/TutorSubjects.vue";
     import Tutor from "../components/Tutor.vue";
     const subjects = [
     {subject: "Math", topics: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Precalculus (AP)", "Probability"]},
-    {subject: "Science", topics: ["Biology (Honors)", "Chemistry (Honors)", "Physics (Honors, AP)", "Psychology", "Neuroscience/Brain Bee", "Human Anatomy & Physiology"]},
-    {subject: "Test Prep", topics: ["SAT Prep: Math", "SAT Prep: Reading/Writing", "SAT Prep: Full Test", "AMC 8"]},
+    {subject: "Science", topics: ["Biology (Honors, AP)", "Chemistry (Honors)", "Physics (Honors, AP)", "Psychology", "Neuroscience/Brain Bee", "Human Anatomy & Physiology"]},
+    {subject: "Test Prep", topics: ["SAT Prep: Math, R&W", "AMC 8", "AP Testing", "STAAR Testing"]},
     {subject: "More", topics: ["English/Writing", "Debate", "Chess"]},
     ];
     const tutors = [

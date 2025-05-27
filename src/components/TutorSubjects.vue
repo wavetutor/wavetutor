@@ -1,7 +1,7 @@
 <template>
-    <div class="shadow-lg rounded-lg p-5 pl-6 m-3 bg-cyan-800 dark:bg-cyan-950">
-        <p class="mb-2 text-white font-semibold">{{ subject }}</p>
-        <ul style="list-style-type: disc;" class="ml-3 text-white">
+    <div class="shadow-lg rounded-lg p-5 py-6 m-2 dark:bg-zinc-800 bg-zinc-100">
+        <p class="mb-2 text-xl text-primary font-semibold">{{ subject }}</p>
+        <ul style="list-style-type: disc;" class="ml-3 dark:text-white text-gray-950">
             <li v-for="topic in topics" :key="topic">{{ topic }}</li>
         </ul>
     </div>
