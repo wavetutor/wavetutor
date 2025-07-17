@@ -46,7 +46,7 @@
               in the description.
             </p>
             <br />
-            <p class="text-gray-800 dark:text-white">
+            <p class="text-emerald-500 font-bold text-2xl">
               Please select the "Friends & Family" option to waive the PayPal
               fees.
             </p>

@@ -46,10 +46,10 @@
     </section>
 
     <!-- Stats / Milestone Section -->
-    <section class="bg-gray-100 dark:bg-zinc-800 py-12">
+    <section class="bg-gray-100 dark:bg-zinc-800 py-8">
       <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <h2 class="mb-4 sm:text-5xl text-3xl font-extrabold text-zinc-900 dark:text-white [text-wrap:balance]">
-          For almost
+          For
           <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">two years</span>,
           Wave Tutor has
           <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">educated</span>
@@ -62,8 +62,13 @@
     </section>
 
     <!-- Testimonial Section -->
-    <section class="bg-white dark:bg-zinc-900 py-12">
+    <section class="bg-white dark:bg-zinc-900 py-8">
       <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+        <div class="mx-auto mb-8 max-w-screen-md lg:mb-16">
+          <h2 class="mb-4 text-3xl tracking-tight text-center text-zinc-900 dark:text-white">
+            Families across the country love Wave Tutor.
+          </h2>
+        </div>
         <div class="grid gap-8 md:grid-cols-2">
           <!-- Original Testimonial -->
           <figure class="max-w-screen-md mx-auto text-center">
@@ -82,10 +87,11 @@
               </p>
             </blockquote>
             <figcaption class="flex items-center justify-center mt-6 space-x-3">
-              <img class="w-6 h-6 rounded-full" :src="JyotiTestImg" alt="Jyoti Varma, and family" />
+              <img class="w-6 h-6 rounded-full" :src="JyotiTestImg" alt="Jyoti V., and family" />
               <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                <div class="pr-3 text-sm font-medium text-zinc-900 dark:text-white">Suraj &amp; Jyoti Varma</div>
-                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Math and English since August 2023</div>
+                <div class="pr-3 text-sm font-medium text-zinc-900 dark:text-white">Suraj &amp; Jyoti V.</div>
+                <div class="px-3 text-sm font-light text-gray-500 dark:text-gray-400">Math and English since August 2023</div>
+                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Oregon</div>
               </div>
             </figcaption>
           </figure>
@@ -108,8 +114,9 @@
             </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-3">
               <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                <div class="pr-3 text-sm font-medium text-zinc-900 dark:text-white">Bulbul Ganguly</div>
-                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Math since May 2025</div>
+                <div class="pr-3 text-sm font-medium text-zinc-900 dark:text-white">Bulbul G.</div>
+                <div class="px-3 text-sm font-light text-gray-500 dark:text-gray-400">Math since May 2025</div>
+                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Texas</div>
               </div>
             </figcaption>
           </figure>
@@ -118,11 +125,11 @@
     </section>
 
     <!-- Key Features / Example Session Section -->
-    <section class="bg-white dark:bg-zinc-900 py-12">
+    <section class="bg-white dark:bg-zinc-900">
       <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <div class="max-w-screen-md mx-auto mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
-            The Wave Tutor Difference
+            Why Wave Tutor?
           </h2>
         </div>
         <div class="grid gap-8 md:grid-cols-2">
@@ -133,7 +140,7 @@
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">1-on-1 Tutoring</h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Personalized, conversational sessions focused on the student’s unique needs and learning style.
+              We don't teach with generic curriculums. We personalize our tutoring content sessions to focus on your student’s unique needs and learning style.
             </p>
           </div>
           <!-- Custom Materials -->
@@ -143,7 +150,7 @@
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">Custom Teaching Materials</h3>
             <p class="text-gray-500 dark:text-gray-400">
-              We create tailored resources that match each student’s goals, engaging their strengths and learning habits.
+              We create tailored resources and problem sets that match each student’s goals, engaging their strengths and learning habits.
             </p>
           </div>
           <!-- Concept Checks -->
@@ -153,7 +160,7 @@
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">In-Session Concept Checks</h3>
             <p class="text-gray-500 dark:text-gray-400">
-              We strengthen understanding with targeted questions, addressing confusion on the spot.
+              We ensure your student understands the concepts before they leave each session, so they can practice on their own with confidence.
             </p>
           </div>
           <!-- Personalized Homework -->
@@ -163,15 +170,15 @@
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">Personalized Homework</h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Assignments tailored to reinforce key concepts and track progress between sessions.
+              All homework is written from scratch and personalized to cover the content learned in the session, ensuring your student builds on their knowledge effectively.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-        <section class="bg-white dark:bg-zinc-900 py-12">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+        <section class="bg-white dark:bg-zinc-900 py-8">
+      <div class="px-4 mx-auto max-w-screen-xl text-center lg:px-6">
         <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Our Team</h2>
         </div>
@@ -201,7 +208,7 @@
       </div>
     </section>
     <!-- Aspiring Tutors Section -->
-    <section class="bg-white dark:bg-zinc-900 py-12">
+    <section class="bg-white dark:bg-zinc-900 py-8">
       <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <h2 class="mb-4 text-3xl font-extrabold text-zinc-900 dark:text-white">Want to join our team of tutors?</h2>
         <p class="mb-8 text-gray-500 dark:text-gray-400">

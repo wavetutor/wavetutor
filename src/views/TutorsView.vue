@@ -107,13 +107,13 @@
               <img
                 :src="selectedTutor.picture"
                 alt=""
-                class="rounded-full w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover border-4 border-zinc-900 dark:border-white shadow-2xl"
+                class="rounded-full w-64 h-64 object-cover border-4 border-zinc-900 dark:border-white shadow-2xl"
               />
             </div>
-            <p class="max-w-2xl text-xl sm:text-2xl leading-snug text-zinc-800 dark:text-zinc-200">
+            <p class="max-w-2xl text-xl leading-snug text-zinc-800 dark:text-zinc-200">
               {{ selectedTutor.bio }}
             </p>
-            <p class="max-w-2xl text-xl sm:text-2xl leading-snug text-zinc-800 dark:text-zinc-200">
+            <p class="max-w-2xl text-xl leading-snug text-zinc-800 dark:text-zinc-200">
               I teach {{ formattedSubjects }}.
             </p>
           </div>
@@ -204,11 +204,13 @@ const showAcc      = ref(false)
 function openTutor(tutor) {
   selectedTutor.value = tutor
   showAcc.value       = false
+  document.body.style.overflow = 'hidden'
   setTimeout(() => (showAcc.value = true), 150)
 }
 
 function closeTutor() {
   selectedTutor.value = null
+  document.body.style.overflow = ''
   showAcc.value       = false
 }
 
