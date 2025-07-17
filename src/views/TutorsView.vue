@@ -192,7 +192,7 @@ const tutors = [
 ]
 
 const subjects = [
-  { subject: "Math",        topics: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Precalculus (AP)", "Probability"] },
+  { subject: "Math",        topics: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Precalculus (AP)", "Probability", "Calculus (AP: AB, BC)"] },
   { subject: "Science",     topics: ["Biology (Honors, AP)", "Chemistry (Honors)", "Physics (Honors, AP)", "Psychology", "Neuroscience/Brain Bee", "Human Anatomy & Physiology"] },
   { subject: "Test Prep",   topics: ["SAT Prep: Math, R&W", "AMC 8", "AP Testing", "STAAR Testing"] },
   { subject: "More",        topics: ["English/Writing", "Debate", "Chess"] },
