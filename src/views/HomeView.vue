@@ -122,7 +122,7 @@
       <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <div class="max-w-screen-md mx-auto mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
-            An example session includes the following:
+            The Wave Tutor Difference
           </h2>
         </div>
         <div class="grid gap-8 md:grid-cols-2">
@@ -153,7 +153,7 @@
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">In-Session Concept Checks</h3>
             <p class="text-gray-500 dark:text-gray-400">
-              We reinforce understanding with targeted questions, addressing confusion on the spot.
+              We strengthen understanding with targeted questions, addressing confusion on the spot.
             </p>
           </div>
           <!-- Personalized Homework -->

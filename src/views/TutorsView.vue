@@ -63,7 +63,7 @@
     <transition name="fade">
       <div
         v-if="selectedTutor"
-        class="fixed inset-0 z-50 overflow-y-auto max-h-screen bg-white dark:bg-zinc-900 px-4 py-8 sm:px-8 sm:py-12 lg:px-16 lg:px-32"
+        class="fixed inset-0 z-50 overflow-y-auto h-screen bg-white dark:bg-zinc-900 px-4 py-8 sm:px-8 sm:py-12 lg:px-32"
       >
         <button
           @click="closeTutor"
@@ -138,7 +138,7 @@ const tutors = [
   {
     id: 'vedanti',
     name: 'Vedanti Patil',
-    bio: "Hey there! I'm Vedanti, a student at Westwood High School. I'm passionate about the world of biology and neuroscience. I'm also enthusiastic about chemistry and psychology! In my free time, I enjoy creating art, spending time with my friends, and participating in my school publication.",
+    bio: "Hey there! I'm Vedanti, a student at Westwood High School. I'm passionate about biology and neuroscience. In my free time, I enjoy creating art, spending time with my friends, and writing for my school's newspaper.",
     picture: imageMap.vedanti,
     accomplishments: [
       'State Champion for UIL District Science',
