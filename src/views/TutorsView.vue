@@ -130,7 +130,7 @@ import { ref, computed } from 'vue'
 const imageMap = {
   vedanti: new URL('@/assets/credits/vedanti.png', import.meta.url).href,
   nikhil:  new URL('@/assets/credits/nikhil.jpg', import.meta.url).href,
-  rishabh: new URL('@/assets/credits/rishabh.jpg', import.meta.url).href,
+  rishabh: new URL('@/assets/credits/rishabh.png', import.meta.url).href,
   aaron:   new URL('@/assets/credits/aaron.jpg', import.meta.url).href,
 }
 

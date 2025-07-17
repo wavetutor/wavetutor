@@ -233,7 +233,7 @@ import JyotiTestImg from "../assets/jyoti-test.jpg";
 import ruhan from "../assets/credits/ruhan.jpeg";
 import vedanti from "../assets/credits/vedanti.png";
 import nikhil from "../assets/credits/nikhil.jpg";
-import rishabh from "../assets/credits/rishabh.jpg";
+import rishabh from "../assets/credits/rishabh.png";
 import aaron from "../assets/credits/aaron.jpg";
 
 // Team members data
