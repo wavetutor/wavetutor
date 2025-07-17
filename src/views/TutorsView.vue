@@ -170,7 +170,7 @@ const tutors = [
     bio: "Hey! My name is Rishabh, and I'm a student at Westwood High School. I enjoy doing math and physics, and I'm really excited to go deeper with these topics with you! I enjoy playing video games, talking with friends, listening to music, and procrastinating for hours in my free time.",
     picture: imageMap.rishabh,
     accomplishments: [
-      '4.0 GPA in 2022-2023 School Year',
+      '4.0 GPA in high school',
       '790 Math SAT Score in 8th Grade',
       'AFJROTC Academic Bowl National Qualifier 2023-2024',
       'Science Bowl Practice Team 2022-2023'
