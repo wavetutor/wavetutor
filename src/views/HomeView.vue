@@ -2,182 +2,248 @@
 <template>
   <main class="bg-white dark:bg-zinc-900">
     <!-- Hero Section -->
-    <section class="bg-white dark:bg-zinc-900">
-      <div class="grid max-w-screen-xl lg:h-[70vh] px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+    <section class="relative bg-gradient-to-br from-white via-blue-50 to-primary/5 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 overflow-hidden">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-32 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="relative grid max-w-screen-xl lg:h-[75vh] px-4 py-12 mx-auto lg:gap-8 xl:gap-0 lg:py-20 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7 mb-10">
-          <h1 class="text-center lg:text-left mb-4 text-5xl font-extrabold tracking-tight leading-none text-zinc-900 md:text-5xl lg:text-7xl dark:text-white">
+          <!-- Trust indicators -->
+          
+
+          <h1 class="text-center lg:text-left mb-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight text-zinc-900 dark:text-white">
             This isn't like
-            <span class="pb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-700 block">
-              other tutoring.
+            <span class="relative">
+              <span class="block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-blue-700">
+                other tutoring.
+              </span>
+              <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary rounded-full transform scale-x-0 animate-pulse"></div>
             </span>
           </h1>
-          <p class="text-center lg:text-left max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            Wave Tutor provides personalized, conversational tutoring to propel learning like never before.
+          
+          <p class="text-center lg:text-left max-w-2xl mb-8 font-medium text-gray-600 lg:mb-10 md:text-lg lg:text-xl dark:text-gray-300 leading-relaxed">
+            Wave Tutor provides <span class="font-bold text-primary dark:text-blue-400">personalized, conversational tutoring</span> to propel learning like never before.
           </p>
-          <div class="text-center lg:text-left">
+          
+          <div class="text-center lg:text-left space-y-4 sm:space-y-0 sm:space-x-0 sm:flex sm:flex-col lg:flex-row sm:items-center lg:items-start lg:space-x-4">
             <a
-              href="https://forms.gle/tXpQbQdPqAnfebT78"
-              class="inline-flex justify-center items-center py-5 px-6 text-xl font-medium text-white transition-all duration-600 rounded-lg bg-primary hover:bg-secondary focus:ring-4 focus:ring-primary/50">
-              Sign up today!
+              href="/signup/"
+              class="group inline-flex justify-center items-center py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg font-semibold text-white transition-all duration-300 rounded-xl bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary shadow-lg hover:shadow-xl hover:shadow-primary/25 transform hover:-translate-y-1 w-full sm:w-auto">
+              <span>Sign Up Today</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
             </a>
             <router-link
               to="/pricing/"
-              class="inline-flex items-center justify-center py-5 px-6 ml-4 text-xl font-medium text-center text-gray-800 dark:text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 hover:underline hover:text-primary transition-all hover:ml-2 duration-200">
+              class="group inline-flex items-center justify-center py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg font-semibold text-gray-700 dark:text-gray-200 rounded-xl border-2 border-gray-200 dark:border-gray-600 hover:border-primary dark:hover:border-primary transition-all duration-300 hover:bg-primary/5 dark:hover:bg-primary/10 w-full sm:w-auto mt-3 lg:mt-0">
               View Pricing
-              <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
               </svg>
             </router-link>
           </div>
         </div>
+        
         <div class="hidden lg:flex lg:col-span-5 justify-center items-center mb-10 lg:mt-0">
-          <img
-            :src="Logo"
-            alt="Wave Tutor Logo"
-            class="rounded-full h-80 w-80 shadow-2xl shadow-primary"
-            style="outline: 8px solid white; outline-offset: -8px;"
-          />
+          <div class="relative">
+            <!-- Floating animation elements -->
+                        <img
+              :src="Logo"
+              alt="Wave Tutor Logo"
+              class="relative rounded-full h-80 w-80 shadow-2xl shadow-primary/30 transform hover:scale-105 transition-transform duration-500"
+              style="outline: 8px solid white; outline-offset: -8px;"
+            />
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Stats / Milestone Section -->
-    <section class="bg-gray-100 dark:bg-zinc-800 py-8">
-      <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-        <h2 class="mb-4 sm:text-5xl text-3xl font-extrabold text-zinc-900 dark:text-white [text-wrap:balance]">
+    <section class="relative bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 py-16">
+      <!-- Background pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.3) 1px, transparent 0); background-size: 40px 40px;"></div>
+      </div>
+      
+      <div class="relative max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+        <!-- Stats grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="group bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="text-4xl font-bold text-primary mb-2">2+</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">Years in Operation</div>
+          </div>
+          <div class="group bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="text-4xl font-bold text-primary mb-2">100+</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">Sessions Completed</div>
+          </div>
+          <div class="group bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="text-4xl font-bold text-primary mb-2">20+</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">Subjects Offered</div>
+          </div>
+        </div>
+
+        <h2 class="mb-8 sm:text-4xl text-3xl font-extrabold text-zinc-900 dark:text-white leading-tight [text-wrap:balance]">
           For
-          <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">two years</span>,
+          <span class="relative">
+            <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">two years</span>
+          </span>,
           Wave Tutor has
           <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">educated</span>
-          and
-          <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">inspired</span>
-          the next generation of students with
+          students from
+          <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">across the United States</span>
+          with
           <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">personalized education</span>.
         </h2>
       </div>
     </section>
 
     <!-- Testimonial Section -->
-    <section class="bg-white dark:bg-zinc-900 py-8">
+    <!-- Testimonial Section -->
+    <section class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-800 dark:to-zinc-900 py-16">
       <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
-        <div class="mx-auto mb-8 max-w-screen-md lg:mb-16">
-          <h2 class="mb-4 text-3xl tracking-tight text-center text-zinc-900 dark:text-white">
-            Families across the country love Wave Tutor.
+        <div class="mx-auto mb-12 max-w-screen-md lg:mb-16 text-center">
+          <h2 class="mb-6 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
+            What Families Are Saying
           </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300">
+            Real stories from families across the country who trust Wave Tutor
+          </p>
         </div>
-        <div class="grid gap-8 md:grid-cols-2">
+        
+        <div class="grid gap-8 lg:grid-cols-2">
           <!-- Original Testimonial -->
-          <figure class="max-w-screen-md mx-auto text-center">
-            <svg
-              class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
-              viewBox="0 0 24 27"
-              fill="none">
-              <path
-                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                fill="currentColor"
-              />
-            </svg>
-            <blockquote>
-              <p class="text-lg text-zinc-900 dark:text-white">
-                "Wave Tutor is a great service for online tutoring. Our son Varun, 13, has been taking Math and Language Arts from them since August 2023. He is doing online flex education because of his medical treatment. Wave Tutor has helped him keep up with school and ensure he is not losing out on opportunities he would normally get from in-person school. He likes working with Vedanti and Nikhil, who are patient, friendly and knowledgeable. They are also flexible and accommodating with his schedule and needs. We highly recommend Wave Tutor to anyone."
+          <div class="relative bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <!-- Quote icon -->
+            <div class="absolute -top-4 -left-4 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 27">
+                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/>
+              </svg>
+            </div>
+            
+            <blockquote class="mb-6">
+              <p class="text-lg text-zinc-700 dark:text-zinc-200 leading-relaxed">
+                "Wave Tutor is a great service for online tutoring. Our son Varun, 13, has been taking Math and Language Arts from them since August 2023. He is doing online flex education because of his medical treatment. Wave Tutor has helped him keep up with school and ensure he is not losing out on opportunities. He likes working with Vedanti and Nikhil, who are patient, friendly and knowledgeable."
               </p>
             </blockquote>
-            <figcaption class="flex items-center justify-center mt-6 space-x-3">
-              <img class="w-6 h-6 rounded-full" :src="JyotiTestImg" alt="Jyoti V., and family" />
-              <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                <div class="pr-3 text-sm font-medium text-zinc-900 dark:text-white">Suraj &amp; Jyoti V.</div>
-                <div class="px-3 text-sm font-light text-gray-500 dark:text-gray-400">Math and English since August 2023</div>
-                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Oregon</div>
+            
+            <div class="flex items-center">
+              <img class="w-12 h-12 rounded-full border-2 border-primary" :src="JyotiTestImg" alt="Jyoti V., and family" />
+              <div class="ml-4">
+                <div class="font-semibold text-zinc-900 dark:text-white">Suraj & Jyoti V.</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Oregon • Math and English since August 2023</div>
               </div>
-            </figcaption>
-          </figure>
+            </div>
+          </div>
 
-
-          <figure class="max-w-screen-md mx-auto text-center">
-            <svg
-              class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
-              viewBox="0 0 24 27"
-              fill="none">
-              <path
-                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                fill="currentColor"
-              />
-            </svg>
-            <blockquote>
-              <p class="text-lg text-zinc-900 dark:text-white">
-                "My son started taking math lessons from Wave Tutor since summer of this year. In 2 months, he has improved a lot in his math skills. We’ve been very fortunate to have a talented high school student, guiding my son through complex math concepts. Aaron's patience, depth of understanding, and ability to explain advanced topics have been very helpful. My son enjoys challenging math concepts and his confidence in the subject has increased because of him. I wholeheartedly recommend Wave Tutor to any family seeking tutoring support in mathematics."
+          <!-- Second Testimonial -->
+          <div class="relative bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <!-- Quote icon -->
+            <div class="absolute -top-4 -left-4 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 27">
+                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/>
+              </svg>
+            </div>
+            
+            <blockquote class="mb-6">
+              <p class="text-lg text-zinc-700 dark:text-zinc-200 leading-relaxed">
+                "My son started taking math lessons from Wave Tutor since summer of this year. In 2 months, he has improved a lot in his math skills. We've been very fortunate to have a talented high school student, guiding my son through complex math concepts. Aaron's patience, depth of understanding, and ability to explain advanced topics have been very helpful."
               </p>
             </blockquote>
-                        <figcaption class="flex items-center justify-center mt-6 space-x-3">
-              <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                <div class="pr-3 text-sm font-medium text-zinc-900 dark:text-white">Bulbul G.</div>
-                <div class="px-3 text-sm font-light text-gray-500 dark:text-gray-400">Math since May 2025</div>
-                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Texas</div>
+            
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center border-2 border-primary">
+                <span class="text-white font-semibold text-lg">B</span>
               </div>
-            </figcaption>
-          </figure>
+              <div class="ml-4">
+                <div class="font-semibold text-zinc-900 dark:text-white">Bulbul G.</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Texas • Math since May 2025</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
+    </section>    <!-- Key Features / Example Session Section -->
     <!-- Key Features / Example Session Section -->
-    <section class="bg-white dark:bg-zinc-900">
+    <section class="bg-white dark:bg-zinc-900 py-16">
       <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-        <div class="max-w-screen-md mx-auto mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
-            Why Wave Tutor?
+        <div class="max-w-screen-md mx-auto mb-12 lg:mb-16">
+          <h2 class="mb-6 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
+            Why Choose Wave Tutor?
           </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            We're not just another tutoring service. Our approach is designed around what actually works for students.
+          </p>
         </div>
-        <div class="grid gap-8 md:grid-cols-2">
+        
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <!-- 1-on-1 Tutoring -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full lg:h-16 lg:w-16 bg-primary">
-              <i class="fas fa-chalkboard-teacher w-6 h-6 text-white lg:w-8 lg:h-8"></i>
+          <div class="group relative bg-gray-50 dark:bg-zinc-800 p-8 rounded-2xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:shadow-lg">
+            <div class="flex justify-center items-center mb-6 w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-primary to-secondary shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-user-graduate text-white text-2xl"></i>
             </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">1-on-1 Tutoring</h3>
-            <p class="text-gray-500 dark:text-gray-400">
-              We don't teach with generic curriculums. We personalize our tutoring content sessions to focus on your student’s unique needs and learning style.
+            <h3 class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">1-on-1 Personalized</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              No generic curriculums. Every session is tailored to your student's unique learning style and goals.
             </p>
           </div>
+
           <!-- Custom Materials -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full lg:h-16 lg:w-16 bg-primary">
-              <i class="fas fa-book w-6 h-6 text-white lg:w-8 lg:h-8"></i>
+          <div class="group relative bg-gray-50 dark:bg-zinc-800 p-8 rounded-2xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:shadow-lg">
+            <div class="flex justify-center items-center mb-6 w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-secondary to-blue-600 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-book-open text-white text-2xl"></i>
             </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Custom Teaching Materials</h3>
-            <p class="text-gray-500 dark:text-gray-400">
-              We create tailored resources and problem sets that match each student’s goals, engaging their strengths and learning habits.
+            <h3 class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">Custom Materials</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Tailored resources and problem sets that match each student's goals and learning habits.
             </p>
           </div>
+
           <!-- Concept Checks -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full lg:h-16 lg:w-16 bg-primary">
-              <i class="fas fa-check-circle w-6 h-6 text-white lg:w-8 lg:h-8"></i>
+          <div class="group relative bg-gray-50 dark:bg-zinc-800 p-8 rounded-2xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:shadow-lg">
+            <div class="flex justify-center items-center mb-6 w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-green-500 to-primary shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-check-circle text-white text-2xl"></i>
             </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">In-Session Concept Checks</h3>
-            <p class="text-gray-500 dark:text-gray-400">
-              We ensure your student understands the concepts before they leave each session, so they can practice on their own with confidence.
+            <h3 class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">Concept Mastery</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              We ensure understanding before moving on, so students can practice with confidence.
             </p>
           </div>
+
           <!-- Personalized Homework -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full lg:h-16 lg:w-16 bg-primary">
-              <i class="fas fa-pencil-alt w-6 h-6 text-white lg:w-8 lg:h-8"></i>
+          <div class="group relative bg-gray-50 dark:bg-zinc-800 p-8 rounded-2xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:shadow-lg">
+            <div class="flex justify-center items-center mb-6 w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-secondary shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-tasks text-white text-2xl"></i>
             </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Personalized Homework</h3>
-            <p class="text-gray-500 dark:text-gray-400">
-              All homework is written from scratch and personalized to cover the content learned in the session, ensuring your student builds on their knowledge effectively.
+            <h3 class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">Smart Homework</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Written from scratch and personalized to reinforce session content effectively.
             </p>
           </div>
+        </div>
+
+        <!-- Call-to-action -->
+        <div class="mt-16 p-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl">
+          <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
+            Ready to experience the difference?
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+            Join students across the U.S. who have transformed learning with Wave Tutor.
+          </p>
+          <a
+            href="/signup/"
+            class="inline-flex items-center justify-center py-3 px-8 font-semibold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:from-secondary hover:to-primary transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+            Get Started Today
+            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </a>
         </div>
       </div>
-    </section>
-
-        <section class="bg-white dark:bg-zinc-900 py-8">
+    </section>        <section class="bg-white dark:bg-zinc-900 py-8">
       <div class="px-4 mx-auto max-w-screen-xl text-center lg:px-6">
         <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Our Team</h2>
@@ -215,7 +281,7 @@
           We're always looking for passionate educators. If you're interested in becoming a Wave Tutor, fill out our application form.
         </p>
         <a
-          href="https://forms.gle/BwfEq8Y3pscKTz3FA"
+          href="/signup/"
           target="_blank"
           rel="noopener"
           class="inline-flex items-center justify-center py-3 px-5 font-medium text-white bg-primary rounded-lg hover:bg-secondary focus:ring-4 focus:ring-primary/50 transition-all">

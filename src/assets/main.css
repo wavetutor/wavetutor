@@ -2,21 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-    width: 20px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
   
+  body {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center py-3 px-6 font-semibold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:from-secondary hover:to-primary transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl;
+  }
+  
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-700;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #1780a3, #028090);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #028090, #1780a3);
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
   ::-webkit-scrollbar-track {
     background-color: #18181a;
   }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #384253;
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #62738a;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Focus styles for better accessibility */
+*:focus {
+  outline: 2px solid #1780a3;
+  outline-offset: 2px;
+}
+
+button:focus, a:focus {
+  outline: 2px solid #1780a3;
+  outline-offset: 2px;
+}
