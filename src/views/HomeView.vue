@@ -281,7 +281,7 @@
           We're always looking for passionate educators. If you're interested in becoming a Wave Tutor, fill out our application form.
         </p>
         <a
-          href="/signup/"
+          href="https://forms.gle/pezRaRBtRWSqkjEo7"
           target="_blank"
           rel="noopener"
           class="inline-flex items-center justify-center py-3 px-5 font-medium text-white bg-primary rounded-lg hover:bg-secondary focus:ring-4 focus:ring-primary/50 transition-all">
