@@ -155,12 +155,14 @@ const tutors = [
     bio: "Hello! My name is Nikhil, and I am a student at Westwood High School. I'm passionate about math, programming, writing, and chess. I enjoy reading, writing, talking to friends, and listening to music in my free time.",
     picture: imageMap.nikhil,
     accomplishments: [
-      '4.0 GPA in high school',
-      'Ranked fifth best debater in the state of Texas by the Texas Forensic Association',
-      'Qualified to the Tournament of Champions, the most prestigious national tournament in Policy Debate',
+      '3x Tournament of Champions Qualifier',
+      'Top 8 internationally on the National Debate Coach Association Baker Cup',
       'Finalist of the Stanford Debate Tournament and Quarterfinalist of the Harvard Debate Tournament',
-      '2x Texas Forensic Association State Tournament Qualifier',
-      'AP & IB Student'
+      'Ranked fifth best debater in the state of Texas by the Texas Forensic Association',
+      '3x Texas Forensic Association State Tournament Qualifier',
+      '4.0 GPA in high school',
+      'Opinions Editor, Westwood Horizon',
+      'AP Student'
     ],
     subjects: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Chess", "English/Writing", "Debate"]
   },
