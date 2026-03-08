@@ -157,7 +157,7 @@ const tutors = [
     accomplishments: [
       '3x Tournament of Champions Qualifier',
       'Top 8 internationally on the National Debate Coach Association Baker Cup',
-      'Finalist of the Stanford Debate Tournament and Quarterfinalist of the Harvard Debate Tournament',
+      'Finalist - Stanford Debate Tournament; Semifinalist - Berkeley Debate Tournament; Quarterfinalist - Harvard Debate Tournament',
       'Ranked fifth best debater in the state of Texas by the Texas Forensic Association',
       '3x Texas Forensic Association State Tournament Qualifier',
       '4.0 GPA in high school',
@@ -185,9 +185,9 @@ const tutors = [
     bio: "Hey, I'm Aaron! I love learning math and competing in math competitions all across the country. In my free time I like to procrastinate, read and play Brawl Stars.",
     picture: imageMap.aaron,
     accomplishments: [
-      '4x AIME Qualifier (2022, 2023, 2024, 2025)',
+      '5x AIME Qualifier (2022, 2023, 2024, 2025, 2026)',
       'Mathcounts State 2nd Place Team (2022, 2023) and Top 13 (2023)',
-      'Science Bowl Team 2023'
+      'Harvard-MIT Math Tournament Top 10 Team (Feb. 2026)',
     ],
     subjects: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Precalculus (AP)", "Probability", "SAT Math"]
   }
