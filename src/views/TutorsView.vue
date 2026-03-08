@@ -142,10 +142,14 @@ const tutors = [
     picture: imageMap.vedanti,
     accomplishments: [
       'State Champion for UIL District Science',
-      'Placed 4th nationally in the Senior Brain Bee (organized by NSF)',
-      'Placed 8th in Texas for State Brain Bee',
-      'State Champion for Bio Process Lab (organized by Science Olympiad)',
-      'Gold Medal at National Spanish Examination'
+      '2nd Place Nationally at NSF Senior Brain Bee',
+      'U.S. Office of Naval Research Award at Greater Austin Regional Science & Engineering Fair (awarded to 7 of 427 projects, 2026)',
+      'Top Written Scorer at Rice University State Brain Bee',
+      'State Champion for Bio Process Lab (Science Olympiad)',
+      '2nd Place News Story of the Year — National Student Press Association',
+      'Silver Key in Scholastic Art & Writing (Journalism)',
+      'Published Neuroscience Research Author in Science High School Journal',
+      '5x Best of SNO Student Journalist, Westwood Horizon'
     ],
     subjects: ["Biology (Honors, AP)", "Chemistry (Honors)", "Physics (Honors, AP)", "Psychology", "Neuroscience/Brain Bee", "Human Anatomy & Physiology", "Spanish 1-4"]
   },
