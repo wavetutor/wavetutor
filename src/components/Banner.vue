@@ -7,7 +7,7 @@
                     <span class="hidden sm:inline text-xs sm:text-sm font-medium text-amber-600 dark:text-amber-400">Limited Spots</span>
                 </div>
                 <p class="text-center text-xs sm:text-sm md:text-base font-medium text-amber-700 dark:text-amber-300">
-                    🎓 <span class="hidden xs:inline">Opening limited tutoring spots for Fall 2025!</span><span class="xs:hidden">Limited Fall 2025 spots!</span>
+                    🎓 <span class="hidden xs:inline">Opening limited tutoring spots for Spring 2026!</span><span class="xs:hidden">Limited Spring 2026 spots!</span>
                     <a class="font-semibold underline text-primary hover:text-primary/80 dark:text-primary dark:hover:text-primary/80 transition-colors duration-300 hover:no-underline ml-1" href="/pricing/">
                         <span class="hidden sm:inline">Sign up today →</span><span class="sm:hidden">Reserve now →</span>
                     </a>
