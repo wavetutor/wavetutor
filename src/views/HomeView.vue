@@ -1,263 +1,220 @@
-```vue
 <template>
-  <main class="bg-white dark:bg-zinc-900">
+  <main class="bg-paper dark:bg-stone-900">
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-white via-blue-50 to-primary/5 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 overflow-hidden">
-      <!-- Background decoration -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute -top-40 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-40 -left-32 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div class="relative grid max-w-screen-xl lg:h-[75vh] px-4 py-12 mx-auto lg:gap-8 xl:gap-0 lg:py-20 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7 mb-10">
-          <!-- Trust indicators -->
-          
-
-          <h1 class="text-center lg:text-left mb-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight text-zinc-900 dark:text-white">
+    <section class="relative overflow-hidden">
+      <div class="relative grid max-w-screen-xl px-4 py-14 mx-auto lg:gap-8 xl:gap-0 lg:py-24 lg:grid-cols-12 lg:items-center">
+        <div class="mr-auto place-self-center lg:col-span-7 mb-10 lg:mb-0">
+          <h1 class="text-center lg:text-left mb-6 font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.05] text-stone-900 dark:text-stone-50">
             This isn't like
-            <span class="relative">
-              <span class="block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-blue-700">
-                other tutoring.
-              </span>
-              <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary rounded-full transform scale-x-0 animate-pulse"></div>
-            </span>
+            <span class="text-primary">other tutoring.</span>
           </h1>
-          
-          <p class="text-center lg:text-left max-w-2xl mb-8 font-medium text-gray-600 lg:mb-10 md:text-lg lg:text-xl dark:text-gray-300 leading-relaxed">
-            Wave Tutor provides <span class="font-bold text-primary dark:text-blue-400">personalized, conversational tutoring</span> to propel learning like never before.
+
+          <p class="text-center lg:text-left max-w-2xl mb-8 text-stone-600 lg:mb-10 md:text-lg lg:text-xl dark:text-stone-300 leading-relaxed">
+            Wave Tutor provides <span class="font-semibold text-stone-900 dark:text-white">personalized, conversational tutoring</span> to propel learning like never before.
           </p>
-          
-          <div class="text-center lg:text-left space-y-4 sm:space-y-0 sm:space-x-0 sm:flex sm:flex-col lg:flex-row sm:items-center lg:items-start lg:space-x-4">
-            <a
-              href="/signup/"
-              class="group inline-flex justify-center items-center py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg font-semibold text-white transition-all duration-300 rounded-xl bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary shadow-lg hover:shadow-xl hover:shadow-primary/25 transform hover:-translate-y-1 w-full sm:w-auto">
-              <span>Sign Up Today</span>
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+
+          <div class="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4">
+            <a href="/signup/" class="btn-primary w-full sm:w-auto text-base sm:text-lg py-3.5 px-8">
+              Sign Up Today
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
               </svg>
             </a>
-            <router-link
-              to="/pricing/"
-              class="group inline-flex items-center justify-center py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg font-semibold text-gray-700 dark:text-gray-200 rounded-xl border-2 border-gray-200 dark:border-gray-600 hover:border-primary dark:hover:border-primary transition-all duration-300 hover:bg-primary/5 dark:hover:bg-primary/10 w-full sm:w-auto mt-3 lg:mt-0">
+            <router-link to="/pricing/" class="btn-secondary w-full sm:w-auto text-base sm:text-lg py-3.5 px-8">
               View Pricing
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-              </svg>
             </router-link>
           </div>
         </div>
-        
-        <div class="hidden lg:flex lg:col-span-5 justify-center items-center mb-10 lg:mt-0">
-          <div class="relative">
-            <!-- Floating animation elements -->
-                        <img
-              :src="Logo"
-              alt="Wave Tutor Logo"
-              class="relative rounded-full h-80 w-80 shadow-2xl shadow-primary/30 transform hover:scale-105 transition-transform duration-500"
-              style="outline: 8px solid white; outline-offset: -8px;"
-            />
-          </div>
+
+        <div class="hidden lg:flex lg:col-span-5 justify-center items-center">
+          <img
+            :src="Logo"
+            alt="Wave Tutor Logo"
+            class="rounded-full h-80 w-80 object-cover ring-1 ring-stone-200 dark:ring-stone-700 shadow-lg"
+            style="outline: 8px solid white; outline-offset: -8px;"
+          />
+        </div>
+      </div>
+
+      <!-- Inline stats strip -->
+      <div class="border-y border-stone-200 dark:border-stone-800 bg-sand/60 dark:bg-stone-800/40">
+        <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
+          <dl class="grid grid-cols-3 divide-x divide-stone-200 dark:divide-stone-800 text-center">
+            <div class="py-8 px-2">
+              <dt class="font-display text-3xl sm:text-4xl font-semibold text-primary">175</dt>
+              <dd class="mt-1 text-sm sm:text-base text-stone-600 dark:text-stone-400">Sessions taught</dd>
+            </div>
+            <div class="py-8 px-2">
+              <dt class="font-display text-3xl sm:text-4xl font-semibold text-primary">3 yrs</dt>
+              <dd class="mt-1 text-sm sm:text-base text-stone-600 dark:text-stone-400">In operation</dd>
+            </div>
+            <div class="py-8 px-2">
+              <dt class="font-display text-3xl sm:text-4xl font-semibold text-primary">20+</dt>
+              <dd class="mt-1 text-sm sm:text-base text-stone-600 dark:text-stone-400">Subjects offered</dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <!-- Stats / Milestone Section -->
-    <section class="relative bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 py-16">
-      <!-- Background pattern -->
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.3) 1px, transparent 0); background-size: 40px 40px;"></div>
-      </div>
-      
-      <div class="relative max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-        <!-- Stats grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div class="group bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-            <div class="text-4xl font-bold text-primary mb-2">2+</div>
-            <div class="text-gray-600 dark:text-gray-300 font-medium">Years in Operation</div>
-          </div>
-          <div class="group bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-            <div class="text-4xl font-bold text-primary mb-2">100+</div>
-            <div class="text-gray-600 dark:text-gray-300 font-medium">Sessions Completed</div>
-          </div>
-          <div class="group bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-            <div class="text-4xl font-bold text-primary mb-2">20+</div>
-            <div class="text-gray-600 dark:text-gray-300 font-medium">Subjects Offered</div>
-          </div>
-        </div>
-
-        <h2 class="mb-8 sm:text-4xl text-3xl font-extrabold text-zinc-900 dark:text-white leading-tight [text-wrap:balance]">
-          For
-          <span class="relative">
-            <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">two years</span>
-          </span>,
-          Wave Tutor has
-          <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">educated</span>
-          students from
-          <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">across the United States</span>
-          with
-          <span class="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-blue-700">personalized education</span>.
+    <!-- Narrative Statement -->
+    <section class="bg-sand dark:bg-stone-800/40 py-16 lg:py-24">
+      <div class="max-w-4xl mx-auto px-4 text-center lg:px-6">
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight text-stone-900 dark:text-white [text-wrap:balance]">
+          For three years, Wave Tutor has helped students across the United States thrive through
+          <span class="text-primary">personalized education</span>.
         </h2>
       </div>
     </section>
 
     <!-- Testimonial Section -->
-    <!-- Testimonial Section -->
-    <section class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-800 dark:to-zinc-900 py-16">
-      <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
-        <div class="mx-auto mb-12 max-w-screen-md lg:mb-16 text-center">
-          <h2 class="mb-6 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
-            What Families Are Saying
+    <section class="bg-paper dark:bg-stone-900 py-16 lg:py-24">
+      <div class="max-w-screen-xl px-4 mx-auto lg:px-6">
+        <div class="mx-auto mb-12 max-w-2xl lg:mb-16 text-center">
+          <h2 class="mb-4 font-display text-3xl sm:text-4xl font-semibold text-stone-900 dark:text-white">
+            What families are saying
           </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-300">
+          <p class="text-lg text-stone-600 dark:text-stone-400">
             Real stories from families across the country who trust Wave Tutor
           </p>
         </div>
-        
+
         <div class="grid gap-8 lg:grid-cols-2">
           <!-- Original Testimonial -->
-          <div class="relative bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <!-- Quote icon -->
-            <div class="absolute -top-4 -left-4 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 27">
-                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/>
-              </svg>
-            </div>
-            
+          <figure class="card p-8">
+            <svg class="w-9 h-9 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 27">
+              <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/>
+            </svg>
             <blockquote class="mb-6">
-              <p class="text-lg text-zinc-700 dark:text-zinc-200 leading-relaxed">
-                "Wave Tutor is a great service for online tutoring. Our son Varun, 13, has been taking Math and Language Arts from them since August 2023. He is doing online flex education because of his medical treatment. Wave Tutor has helped him keep up with school and ensure he is not losing out on opportunities. He likes working with Vedanti and Nikhil, who are patient, friendly and knowledgeable."
+              <p class="text-lg text-stone-700 dark:text-stone-200 leading-relaxed">
+                "Wave Tutor is a great service for online tutoring. Our son Varun, 13, has been taking Math and Language Arts from them since August 2023. He is doing online flex education because of his medical treatment. Wave Tutor has helped him keep up with school and ensure he is not losing out on opportunities. He likes working with <router-link :to="{ path: '/tutors/', query: { tutor: 'vedanti' } }" class="text-primary font-semibold underline decoration-primary/40 hover:decoration-primary transition-colors">Vedanti</router-link> and <router-link :to="{ path: '/tutors/', query: { tutor: 'nikhil' } }" class="text-primary font-semibold underline decoration-primary/40 hover:decoration-primary transition-colors">Nikhil</router-link>, who are patient, friendly and knowledgeable."
               </p>
             </blockquote>
-            
-            <div class="flex items-center">
-              <img class="w-12 h-12 rounded-full border-2 border-primary" :src="JyotiTestImg" alt="Jyoti V., and family" />
+            <figcaption class="flex items-center">
+              <img class="w-12 h-12 rounded-full object-cover ring-1 ring-stone-200 dark:ring-stone-700" :src="JyotiTestImg" alt="Jyoti V., and family" />
               <div class="ml-4">
-                <div class="font-semibold text-zinc-900 dark:text-white">Suraj & Jyoti V.</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Oregon • Math and English since August 2023</div>
+                <div class="font-semibold text-stone-900 dark:text-white">Suraj &amp; Jyoti V.</div>
+                <div class="text-sm text-stone-500 dark:text-stone-400">Oregon • Math and English since August 2023</div>
               </div>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
 
           <!-- Second Testimonial -->
-          <div class="relative bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <!-- Quote icon -->
-            <div class="absolute -top-4 -left-4 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
-              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 27">
-                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/>
-              </svg>
-            </div>
-            
+          <figure class="card p-8">
+            <svg class="w-9 h-9 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 27">
+              <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/>
+            </svg>
             <blockquote class="mb-6">
-              <p class="text-lg text-zinc-700 dark:text-zinc-200 leading-relaxed">
-                "My son started taking math lessons from Wave Tutor since summer of this year. In 2 months, he has improved a lot in his math skills. We've been very fortunate to have a talented high school student, guiding my son through complex math concepts. Aaron's patience, depth of understanding, and ability to explain advanced topics have been very helpful."
+              <p class="text-lg text-stone-700 dark:text-stone-200 leading-relaxed">
+                "My son started taking math lessons from Wave Tutor since summer of this year. In 2 months, he has improved a lot in his math skills. We've been very fortunate to have a talented high school student, guiding my son through complex math concepts. <router-link :to="{ path: '/tutors/', query: { tutor: 'aaron' } }" class="text-primary font-semibold underline decoration-primary/40 hover:decoration-primary transition-colors">Aaron</router-link>'s patience, depth of understanding, and ability to explain advanced topics have been very helpful."
               </p>
             </blockquote>
-            
-            <div class="flex items-center">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center border-2 border-primary">
+            <figcaption class="flex items-center">
+              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
                 <span class="text-white font-semibold text-lg">B</span>
               </div>
               <div class="ml-4">
-                <div class="font-semibold text-zinc-900 dark:text-white">Bulbul G.</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Texas • Math since May 2025</div>
+                <div class="font-semibold text-stone-900 dark:text-white">Bulbul G.</div>
+                <div class="text-sm text-stone-500 dark:text-stone-400">Texas • Math since May 2025</div>
               </div>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
-    </section>    <!-- Key Features / Example Session Section -->
-    <!-- Key Features / Example Session Section -->
-    <section class="bg-white dark:bg-zinc-900 py-16">
-      <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-        <div class="max-w-screen-md mx-auto mb-12 lg:mb-16">
-          <h2 class="mb-6 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
-            Why Choose Wave Tutor?
+    </section>
+
+    <!-- Why Choose Wave Tutor -->
+    <section class="bg-sand dark:bg-stone-800/40 py-16 lg:py-24">
+      <div class="max-w-screen-xl px-4 mx-auto lg:px-6">
+        <div class="max-w-2xl mb-12 lg:mb-16">
+          <h2 class="mb-4 font-display text-3xl sm:text-4xl font-semibold text-stone-900 dark:text-white">
+            Why choose Wave Tutor?
           </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
             We're not just another tutoring service. Our approach is designed around what actually works for students.
           </p>
         </div>
-        
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+        <div class="grid gap-6 md:grid-cols-2">
           <!-- 1-on-1 Tutoring -->
-          <div class="group relative bg-gray-50 dark:bg-zinc-800 p-8 rounded-2xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:shadow-lg">
-            <div class="flex justify-center items-center mb-6 w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-primary to-secondary shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <i class="fas fa-user-graduate text-white text-2xl"></i>
+          <div class="card p-8">
+            <div class="flex items-center justify-center mb-5 w-12 h-12 rounded-xl bg-primary/10 text-primary">
+              <i class="fas fa-user-graduate text-xl"></i>
             </div>
-            <h3 class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">1-on-1 Personalized</h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <h3 class="mb-2 text-xl font-semibold text-stone-900 dark:text-white">1-on-1 Personalized</h3>
+            <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
               No generic curriculums. Every session is tailored to your student's unique learning style and goals.
             </p>
           </div>
 
           <!-- Custom Materials -->
-          <div class="group relative bg-gray-50 dark:bg-zinc-800 p-8 rounded-2xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:shadow-lg">
-            <div class="flex justify-center items-center mb-6 w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-secondary to-blue-600 shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <i class="fas fa-book-open text-white text-2xl"></i>
+          <div class="card p-8">
+            <div class="flex items-center justify-center mb-5 w-12 h-12 rounded-xl bg-primary/10 text-primary">
+              <i class="fas fa-book-open text-xl"></i>
             </div>
-            <h3 class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">Custom Materials</h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <h3 class="mb-2 text-xl font-semibold text-stone-900 dark:text-white">Custom Materials</h3>
+            <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
               Tailored resources and problem sets that match each student's goals and learning habits.
             </p>
           </div>
 
-          <!-- Concept Checks -->
-          <div class="group relative bg-gray-50 dark:bg-zinc-800 p-8 rounded-2xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:shadow-lg">
-            <div class="flex justify-center items-center mb-6 w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-green-500 to-primary shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <i class="fas fa-check-circle text-white text-2xl"></i>
+          <!-- Concept Mastery -->
+          <div class="card p-8">
+            <div class="flex items-center justify-center mb-5 w-12 h-12 rounded-xl bg-primary/10 text-primary">
+              <i class="fas fa-check-circle text-xl"></i>
             </div>
-            <h3 class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">Concept Mastery</h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <h3 class="mb-2 text-xl font-semibold text-stone-900 dark:text-white">Concept Mastery</h3>
+            <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
               We ensure understanding before moving on, so students can practice with confidence.
             </p>
           </div>
 
-          <!-- Personalized Homework -->
-          <div class="group relative bg-gray-50 dark:bg-zinc-800 p-8 rounded-2xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:shadow-lg">
-            <div class="flex justify-center items-center mb-6 w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-secondary shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <i class="fas fa-tasks text-white text-2xl"></i>
+          <!-- Smart Homework -->
+          <div class="card p-8">
+            <div class="flex items-center justify-center mb-5 w-12 h-12 rounded-xl bg-primary/10 text-primary">
+              <i class="fas fa-tasks text-xl"></i>
             </div>
-            <h3 class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">Smart Homework</h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <h3 class="mb-2 text-xl font-semibold text-stone-900 dark:text-white">Smart Homework</h3>
+            <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
               Written from scratch and personalized to reinforce session content effectively.
             </p>
           </div>
         </div>
-
-        <!-- Call-to-action -->
-        <div class="mt-16 p-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl">
-          <h3 class="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
-            Ready to experience the difference?
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-            Join students across the U.S. who have transformed learning with Wave Tutor.
-          </p>
-          <a
-            href="/signup/"
-            class="inline-flex items-center justify-center py-3 px-8 font-semibold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:from-secondary hover:to-primary transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
-            Get Started Today
-            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-            </svg>
-          </a>
-        </div>
       </div>
-    </section>        <section class="bg-white dark:bg-zinc-900 py-8">
+    </section>
+
+    <!-- CTA Band -->
+    <section class="bg-primary">
+      <div class="max-w-screen-xl px-4 mx-auto py-16 lg:py-20 lg:px-6 text-center">
+        <h2 class="text-3xl sm:text-4xl font-display font-semibold text-white mb-4">
+          Ready to experience the difference?
+        </h2>
+        <p class="text-white/90 mb-8 max-w-2xl mx-auto text-lg">
+          Join students across the U.S. who have transformed learning with Wave Tutor.
+        </p>
+        <a href="/signup/" class="inline-flex items-center justify-center gap-2 py-3.5 px-8 font-semibold text-primary bg-white rounded-xl shadow-sm hover:bg-stone-100 transition-colors duration-200">
+          Get Started Today
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="bg-paper dark:bg-stone-900 py-16 lg:py-24">
       <div class="px-4 mx-auto max-w-screen-xl text-center lg:px-6">
-        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">Our Team</h2>
-        </div>
-        <div class="grid gap-8 lg:gap-16 sm:grid-cols-3">
-          <div class="text-center text-gray-500 dark:text-gray-400" v-for="person in team" :key="person.name">
-            <img class="mx-auto mb-4 w-36 h-36 rounded-full" :src="person.pfp" :alt="person.name" />
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">{{ person.name }}</h3>
-            <p class="mb-2 font-medium text-gray-700 dark:text-gray-300">{{ person.role }}</p>
-            <ul class="flex justify-center mt-4 space-x-4">
-              <li v-if="person.github">
+        <h2 class="mb-12 lg:mb-16 font-display text-3xl sm:text-4xl font-semibold text-stone-900 dark:text-white">Our Team</h2>
+        <div class="grid gap-10 lg:gap-16 sm:grid-cols-3">
+          <div class="text-center" v-for="person in team" :key="person.name">
+            <img class="mx-auto mb-4 w-36 h-36 rounded-full object-cover ring-1 ring-stone-200 dark:ring-stone-700" :src="person.pfp" :alt="person.name" />
+            <h3 class="mb-1 text-xl font-semibold text-stone-900 dark:text-white">{{ person.name }}</h3>
+            <p class="font-medium text-primary">{{ person.role }}</p>
+            <ul class="flex justify-center mt-3 space-x-4" v-if="person.github">
+              <li>
                 <a
                   :href="`https://github.com/${person.github}`"
-                  class="text-zinc-900 hover:text-zinc-900 dark:hover:text-white dark:text-gray-300"
+                  class="text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-white transition-colors"
                   aria-label="GitHub Profile">
                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -273,18 +230,19 @@
         </div>
       </div>
     </section>
+
     <!-- Aspiring Tutors Section -->
-    <section class="bg-white dark:bg-zinc-900 py-8">
-      <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-        <h2 class="mb-4 text-3xl font-extrabold text-zinc-900 dark:text-white">Want to join our team of tutors?</h2>
-        <p class="mb-8 text-gray-500 dark:text-gray-400">
+    <section class="bg-sand dark:bg-stone-800/40 py-16 lg:py-20">
+      <div class="max-w-screen-xl px-4 mx-auto text-center lg:px-6">
+        <h2 class="mb-4 font-display text-3xl font-semibold text-stone-900 dark:text-white">Want to join our team of tutors?</h2>
+        <p class="mb-8 text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
           We're always looking for passionate educators. If you're interested in becoming a Wave Tutor, fill out our application form.
         </p>
         <a
           href="https://forms.gle/pezRaRBtRWSqkjEo7"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center justify-center py-3 px-5 font-medium text-white bg-primary rounded-lg hover:bg-secondary focus:ring-4 focus:ring-primary/50 transition-all">
+          class="btn-secondary">
           Apply to be a tutor
         </a>
       </div>
@@ -320,8 +278,3 @@ function shuffle<T>(arr: T[]): T[] {
   return arr;
 }
 </script>
-
-<style scoped>
-/* Add any additional custom styles here if needed */
-</style>
-```

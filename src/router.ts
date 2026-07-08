@@ -4,6 +4,7 @@ import TutorsView from './views/TutorsView.vue';
 import PricingView from './views/PricingView.vue'; 
 import PaymentView from './views/PaymentView.vue';
 import ContactView from './views/ContactView.vue';
+import SignupView from './views/SignupView.vue';
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,10 +36,8 @@ export const router = createRouter({
     },
     {
       path: '/signup/',
-      component: HomeView,
-      beforeEnter(to, from, next) {
-        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSehqFMbQfHT-p-fqBv1kgvbQaFU4MbHoRqs1XIyVn-U0btlmQ/viewform';
-      }
+      name: 'signup',
+      component: SignupView
     }
   ]
 });

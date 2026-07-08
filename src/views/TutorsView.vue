@@ -1,55 +1,61 @@
 <template>
   <main class="grow">
     <!-- Tutors Grid -->
-    <section class="bg-white dark:bg-zinc-900 min-h-screen">
+    <section class="bg-paper dark:bg-stone-900 min-h-screen">
       <div class="py-16 px-8 mx-auto max-w-screen-xl lg:py-24 lg:px-12">
         <!-- Header -->
-        <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
+        <div class="mx-auto max-w-screen-md text-center mb-10 lg:mb-14">
+          <h2 class="mb-4 font-display text-4xl sm:text-5xl tracking-tight font-semibold text-stone-900 dark:text-white">
             Our Tutors
           </h2>
-          <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+          <p class="text-lg text-stone-600 dark:text-stone-400">
             Click on a tutor to learn about their qualifications.
           </p>
         </div>
 
         <!-- Portraits -->
         <div class="flex justify-center mb-16">
-          <div class="grid gap-12 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
+          <div class="grid gap-x-10 gap-y-12 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
             <div
               v-for="tutor in tutors"
               :key="tutor.id"
               @click="openTutor(tutor)"
-              class="cursor-pointer overflow-hidden rounded-3xl transition-transform duration-300 hover:scale-110"
+              class="group cursor-pointer flex flex-col items-center text-center"
             >
-              <img
-                :src="tutor.picture"
-                alt=""
-                class="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-72 lg:h-72 object-cover rounded-3xl shadow-xl"
-              />
+              <div class="overflow-hidden rounded-3xl transition-transform duration-300 group-hover:scale-105">
+                <img
+                  :src="tutor.picture"
+                  :alt="tutor.name"
+                  class="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-64 lg:h-64 object-cover rounded-3xl ring-1 ring-stone-200 dark:ring-stone-700 shadow-md group-hover:ring-primary/40 transition-all duration-300"
+                />
+              </div>
+              <h3 class="mt-4 text-lg font-semibold text-stone-900 dark:text-white">{{ tutor.name }}</h3>
+              <span class="text-sm text-stone-500 dark:text-stone-400 group-hover:text-primary transition-colors">
+                View profile →
+              </span>
             </div>
           </div>
         </div>
 
         <!-- Subjects Offered -->
-        <section class="bg-zinc-50 dark:bg-zinc-800 py-16 px-6 rounded-2xl shadow-lg">
+        <section class="bg-sand dark:bg-stone-800/40 border border-stone-200 dark:border-stone-700 py-16 px-6 rounded-2xl">
           <div class="max-w-screen-lg mx-auto text-center">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-zinc-900 dark:text-white">
+            <h2 class="mb-4 font-display text-3xl sm:text-4xl tracking-tight font-semibold text-stone-900 dark:text-white">
               Subjects Offered
             </h2>
-            <p class="mb-10 text-md tracking-tight text-zinc-700 dark:text-zinc-300">
-              We offer a wide range of subjects and topics for tutoring, and <span class="font-bold">more to come soon!</span>
+            <p class="mb-10 text-md tracking-tight text-stone-600 dark:text-stone-300">
+              We offer a wide range of subjects and topics for tutoring, and <span class="font-semibold text-stone-900 dark:text-white">more to come soon!</span>
             </p>
-            <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-left">
               <div
                 v-for="subject in subjects"
                 :key="subject.subject"
-                class="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow hover:shadow-md transition-shadow"
+                class="card p-6"
               >
-                <h3 class="text-2xl font-semibold mb-3 text-zinc-900 dark:text-white">
+                <h3 class="text-xl font-semibold mb-3 text-stone-900 dark:text-white">
                   {{ subject.subject }}
                 </h3>
-                <p class="text-md text-zinc-700 dark:text-zinc-300">
+                <p class="text-md text-stone-600 dark:text-stone-300">
                   {{ subject.topics.join(', ') }}
                 </p>
               </div>
@@ -59,63 +65,66 @@
       </div>
     </section>
 
-    <!-- Fullscreen Modal -->
+    <!-- Fullscreen Profile -->
     <transition name="fade">
       <div
         v-if="selectedTutor"
-        class="fixed inset-0 z-50 overflow-y-auto h-screen bg-white dark:bg-zinc-900 px-4 py-8 sm:px-8 sm:py-12 lg:px-32"
+        class="fixed inset-0 z-50 overflow-y-auto bg-paper dark:bg-stone-900"
       >
         <button
           @click="closeTutor"
-          class="absolute top-6 right-6 text-zinc-900 dark:text-zinc-200 text-5xl hover:text-zinc-500 transition-colors"
+          aria-label="Close profile"
+          class="fixed top-5 right-5 z-10 w-11 h-11 flex items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:text-primary hover:bg-stone-200 dark:hover:bg-stone-700 shadow-sm transition-colors"
         >
-          <i class="fas fa-times"></i>
+          <i class="fas fa-times text-lg"></i>
         </button>
 
-        <div class="flex flex-col md:flex-row justify-evenly items-start md:items-center h-full">
-          <!-- mobile‐only photo at very top -->
-          <div class="flex justify-center mb-8 sm:hidden">
+        <div class="min-h-full max-w-6xl mx-auto px-5 py-16 sm:px-8 sm:py-20 lg:px-12 flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-16">
+          <!-- Left: photo, name, bio, subjects -->
+          <aside class="lg:w-80 flex-shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left">
             <img
               :src="selectedTutor.picture"
-              alt=""
-              class="rounded-full sm:w-48 sm:h-48 h-32 w-32 mt-16 -mb-8 sm:mt-0 sm:mb-0 sm:ml-0 ml-4 object-cover border-4 border-zinc-900 dark:border-white shadow-2xl"
+              :alt="selectedTutor.name"
+              class="w-40 h-40 sm:w-52 sm:h-52 rounded-full object-cover ring-4 ring-primary/20 shadow-xl mb-6"
             />
-          </div>
-
-          <!-- Name + Accomplishments -->
-          <div class="w-full md:w-2/3 p-4 sm:p-6">
-            <h3 class="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white mb-4">
+            <h3 class="font-display text-3xl sm:text-4xl font-semibold text-stone-900 dark:text-white">
               {{ selectedTutor.name }}
             </h3>
-            <div>
-              <p
-                v-for="(acc, i) in selectedTutor.accomplishments"
-                :key="i"
-                :style="{ transitionDelay: `${i * 150}ms` }"
-                class="opacity-0 transform -translate-y-4 text-lg sm:text-3xl font-semibold text-zinc-700 dark:text-zinc-300 transition-all duration-700 ease-out mb-2"
-                :class="{ 'opacity-100 translate-y-0 text-zinc-900 dark:text-white': showAcc }"
-              >
-                {{ acc }}
-              </p>
-            </div>
-          </div>
-
-          <!-- Bio + “I teach” + desktop photo -->
-          <div class="w-full md:w-1/3 p-4 sm:p-6 flex flex-col justify-start items-center md:items-end text-center md:text-right space-y-6">
-            <!-- desktop‐only photo -->
-            <div class="hidden sm:flex justify-center mb-4">
-              <img
-                :src="selectedTutor.picture"
-                alt=""
-                class="rounded-full w-64 h-64 object-cover border-4 border-zinc-900 dark:border-white shadow-2xl"
-              />
-            </div>
-            <p class="max-w-2xl text-xl leading-snug text-zinc-800 dark:text-zinc-200">
+            <div class="mt-3 h-1 w-14 rounded-full bg-primary"></div>
+            <p class="mt-5 text-stone-600 dark:text-stone-300 leading-relaxed">
               {{ selectedTutor.bio }}
             </p>
-            <p class="max-w-2xl text-xl leading-snug text-zinc-800 dark:text-zinc-200">
-              I teach {{ formattedSubjects }}.
-            </p>
+            <div class="mt-6 w-full">
+              <p class="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-3">Teaches</p>
+              <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                <span
+                  v-for="s in selectedTutor.subjects"
+                  :key="s"
+                  class="bg-primary/10 text-primary rounded-full px-3 py-1 text-sm font-medium"
+                >
+                  {{ s }}
+                </span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Right: accomplishments -->
+          <div class="flex-1 min-w-0">
+            <p class="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-6">Accomplishments</p>
+            <ul class="border-t border-stone-200 dark:border-stone-800 divide-y divide-stone-200 dark:divide-stone-800">
+              <li
+                v-for="(acc, i) in selectedTutor.accomplishments"
+                :key="i"
+                :style="{ transitionDelay: `${i * 100}ms` }"
+                class="flex items-start gap-4 py-4 opacity-0 -translate-y-3 transition-all duration-500 ease-out"
+                :class="{ 'opacity-100 !translate-y-0': showAcc }"
+              >
+                <span class="flex-shrink-0 mt-[0.7rem] w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="text-lg sm:text-xl text-stone-800 dark:text-stone-100 leading-snug">
+                  {{ acc }}
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -124,7 +133,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 // Vite static imports
 const imageMap = {
@@ -204,6 +214,9 @@ const subjects = [
   { subject: "More",        topics: ["English/Writing", "Debate", "Chess"] },
 ]
 
+const route  = useRoute()
+const router = useRouter()
+
 const selectedTutor = ref(null)
 const showAcc      = ref(false)
 
@@ -214,18 +227,36 @@ function openTutor(tutor) {
   setTimeout(() => (showAcc.value = true), 150)
 }
 
+function openById(id) {
+  const tutor = tutors.find(t => t.id === id)
+  if (tutor) openTutor(tutor)
+}
+
 function closeTutor() {
   selectedTutor.value = null
   document.body.style.overflow = ''
   showAcc.value       = false
+  // Clear the ?tutor= query so the deep-link can re-trigger later
+  if (route.query.tutor) router.replace({ path: route.path, query: {} })
 }
 
-const formattedSubjects = computed(() => {
-  if (!selectedTutor.value) return ''
-  const subs = selectedTutor.value.subjects
-  if (subs.length === 1) return subs[0]
-  if (subs.length === 2) return subs.join(' and ')
-  return subs.slice(0, -1).join(', ') + ', and ' + subs[subs.length - 1]
+function onKeydown(e) {
+  if (e.key === 'Escape') closeTutor()
+}
+
+// Deep-link support: /tutors/?tutor=<id> auto-opens that profile
+onMounted(() => {
+  window.addEventListener('keydown', onKeydown)
+  if (route.query.tutor) openById(String(route.query.tutor))
+})
+
+watch(() => route.query.tutor, (id) => {
+  if (id) openById(String(id))
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', onKeydown)
+  document.body.style.overflow = ''
 })
 </script>
 

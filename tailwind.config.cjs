@@ -19,9 +19,16 @@ module.exports = {
         secondary: "#028090",
         tertiary: "#E4FDE1",
         quaternary: "#456990",
+        // Warm neutral surfaces (light mode)
+        paper: "#FFFDF9",
+        sand: "#F5EFE4",
+        ink: "#1c1a17",
+        // Warm accent, used sparingly (banner, small highlights)
+        clay: "#C2703D",
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', ...defaultTheme.fontFamily.sans],
+        display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
@@ -47,10 +54,6 @@ module.exports = {
             transform: 'translateY(-10px)'
           }
         }
-      },
-      boxShadow: {
-        'glow': '0 0 20px rgba(23, 128, 163, 0.3)',
-        'glow-lg': '0 0 40px rgba(23, 128, 163, 0.2)',
       },
       backdropBlur: {
         xs: '2px',
