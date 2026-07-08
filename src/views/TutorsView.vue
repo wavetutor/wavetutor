@@ -159,7 +159,8 @@ const tutors = [
       '2nd Place News Story of the Year — National Student Press Association',
       'Silver Key in Scholastic Art & Writing (Journalism)',
       'Published Neuroscience Research Author in Science High School Journal',
-      '5x Best of SNO Student Journalist, Westwood Horizon'
+      'National Winner, American Red Cross IHL Essay Competition',
+      '6x Best of SNO Student Journalist, Westwood Horizon'
     ],
     subjects: ["Biology (Honors, AP)", "Chemistry (Honors)", "Physics (Honors, AP)", "Psychology", "Neuroscience/Brain Bee", "Human Anatomy & Physiology", "Spanish 1-4"]
   },
