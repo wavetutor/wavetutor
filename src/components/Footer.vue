@@ -14,7 +14,7 @@
         </div>
 
         <!-- Links -->
-        <div class="grid grid-cols-2 gap-10 sm:gap-16">
+        <div class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-16">
           <div>
             <h3 class="text-sm font-semibold uppercase tracking-wide text-stone-900 dark:text-stone-100 mb-4">Explore</h3>
             <ul class="space-y-3 text-stone-600 dark:text-stone-400">
@@ -28,7 +28,7 @@
             <h3 class="text-sm font-semibold uppercase tracking-wide text-stone-900 dark:text-stone-100 mb-4">Get in touch</h3>
             <ul class="space-y-3 text-stone-600 dark:text-stone-400">
               <li>
-                <a href="mailto:info@wavetutor.com" class="hover:text-primary transition-colors">info@wavetutor.com</a>
+                <a href="mailto:info@wavetutor.com" class="break-words hover:text-primary transition-colors">info@wavetutor.com</a>
               </li>
               <li>
                 <a href="/signup/" class="hover:text-primary transition-colors">Sign up for tutoring</a>

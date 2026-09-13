@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-paper dark:bg-stone-900">
+  <main class="grow bg-paper dark:bg-stone-900">
     <!-- Hero Section -->
     <section class="relative overflow-hidden">
       <div class="relative grid max-w-screen-xl px-4 py-14 mx-auto lg:gap-8 xl:gap-0 lg:py-24 lg:grid-cols-12 lg:items-center">
@@ -41,7 +41,7 @@
         <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
           <dl class="grid grid-cols-3 divide-x divide-stone-200 dark:divide-stone-800 text-center">
             <div class="py-8 px-2">
-              <dt class="font-display text-3xl sm:text-4xl font-semibold text-primary">175</dt>
+              <dt class="font-display text-3xl sm:text-4xl font-semibold text-primary">185+</dt>
               <dd class="mt-1 text-sm sm:text-base text-stone-600 dark:text-stone-400">Sessions taught</dd>
             </div>
             <div class="py-8 px-2">
@@ -81,7 +81,7 @@
 
         <div class="grid gap-8 lg:grid-cols-2">
           <!-- Original Testimonial -->
-          <figure class="card p-8">
+          <figure class="card p-6 sm:p-8">
             <svg class="w-9 h-9 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 27">
               <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/>
             </svg>
@@ -91,7 +91,7 @@
               </p>
             </blockquote>
             <figcaption class="flex items-center">
-              <img class="w-12 h-12 rounded-full object-cover ring-1 ring-stone-200 dark:ring-stone-700" :src="JyotiTestImg" alt="Jyoti V., and family" />
+              <img class="w-12 h-12 flex-shrink-0 rounded-full object-cover ring-1 ring-stone-200 dark:ring-stone-700" :src="JyotiTestImg" alt="Jyoti V., and family" />
               <div class="ml-4">
                 <div class="font-semibold text-stone-900 dark:text-white">Suraj &amp; Jyoti V.</div>
                 <div class="text-sm text-stone-500 dark:text-stone-400">Oregon • Math and English since August 2023</div>
@@ -100,7 +100,7 @@
           </figure>
 
           <!-- Second Testimonial -->
-          <figure class="card p-8">
+          <figure class="card p-6 sm:p-8">
             <svg class="w-9 h-9 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 27">
               <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/>
             </svg>
@@ -110,7 +110,7 @@
               </p>
             </blockquote>
             <figcaption class="flex items-center">
-              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+              <div class="w-12 h-12 flex-shrink-0 rounded-full bg-primary flex items-center justify-center">
                 <span class="text-white font-semibold text-lg">B</span>
               </div>
               <div class="ml-4">
@@ -137,7 +137,7 @@
 
         <div class="grid gap-6 md:grid-cols-2">
           <!-- 1-on-1 Tutoring -->
-          <div class="card p-8">
+          <div class="card p-6 sm:p-8">
             <div class="flex items-center justify-center mb-5 w-12 h-12 rounded-xl bg-primary/10 text-primary">
               <i class="fas fa-user-graduate text-xl"></i>
             </div>
@@ -148,7 +148,7 @@
           </div>
 
           <!-- Custom Materials -->
-          <div class="card p-8">
+          <div class="card p-6 sm:p-8">
             <div class="flex items-center justify-center mb-5 w-12 h-12 rounded-xl bg-primary/10 text-primary">
               <i class="fas fa-book-open text-xl"></i>
             </div>
@@ -159,7 +159,7 @@
           </div>
 
           <!-- Concept Mastery -->
-          <div class="card p-8">
+          <div class="card p-6 sm:p-8">
             <div class="flex items-center justify-center mb-5 w-12 h-12 rounded-xl bg-primary/10 text-primary">
               <i class="fas fa-check-circle text-xl"></i>
             </div>
@@ -170,7 +170,7 @@
           </div>
 
           <!-- Smart Homework -->
-          <div class="card p-8">
+          <div class="card p-6 sm:p-8">
             <div class="flex items-center justify-center mb-5 w-12 h-12 rounded-xl bg-primary/10 text-primary">
               <i class="fas fa-tasks text-xl"></i>
             </div>

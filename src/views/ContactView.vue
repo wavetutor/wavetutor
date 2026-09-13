@@ -1,7 +1,7 @@
 <template>
     <main class="grow bg-paper dark:bg-stone-900">
-        <section class="flex-1 py-8 lg:py-16 min-h-full">
-            <div class="h-full px-4 mx-auto max-w-screen-xl lg:px-6 flex flex-col justify-center min-h-screen">
+        <section class="py-12 lg:py-16">
+            <div class="px-4 mx-auto max-w-screen-xl lg:px-6">
 
                 <!-- Header -->
                 <div class="max-w-screen-md mx-auto text-center mb-12">
@@ -14,9 +14,9 @@
                 </div>
 
                 <!-- Contact Cards Grid -->
-                <div class="grid gap-8 lg:grid-cols-2 max-w-4xl mx-auto mb-8 lg:mb-12 flex-shrink-0">
+                <div class="grid gap-6 sm:gap-8 lg:grid-cols-2 max-w-4xl mx-auto mb-8 lg:mb-12">
                     <!-- Email Contact Card -->
-                    <div class="card p-8">
+                    <div class="card p-6 sm:p-8">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mr-4">
                                 <i class="fas fa-envelope text-xl"></i>
@@ -36,7 +36,7 @@
                     </div>
 
                     <!-- Sign Up Card -->
-                    <div class="p-8 rounded-2xl border border-primary/20 bg-primary/[0.06] dark:bg-primary/10">
+                    <div class="p-6 sm:p-8 rounded-2xl border border-primary/20 bg-primary/[0.06] dark:bg-primary/10">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mr-4">
                                 <i class="fas fa-graduation-cap text-xl"></i>
@@ -57,7 +57,7 @@
                 </div>
 
                 <!-- FAQ Section -->
-                <div class="max-w-3xl mx-auto flex-grow flex items-center">
+                <div class="max-w-3xl mx-auto">
                     <div class="card p-6 lg:p-8 w-full">
                         <h3 class="text-2xl font-semibold text-stone-900 dark:text-white mb-6 text-center">
                             Quick Answers
@@ -78,9 +78,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Bottom spacer to ensure proper page height -->
-                <div class="flex-shrink-0 h-8 lg:h-16"></div>
             </div>
         </section>
     </main>

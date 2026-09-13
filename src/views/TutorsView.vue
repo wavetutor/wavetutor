@@ -2,7 +2,7 @@
   <main class="grow">
     <!-- Tutors Grid -->
     <section class="bg-paper dark:bg-stone-900 min-h-screen">
-      <div class="py-16 px-8 mx-auto max-w-screen-xl lg:py-24 lg:px-12">
+      <div class="py-12 px-4 mx-auto max-w-screen-xl sm:px-6 lg:py-24 lg:px-12">
         <!-- Header -->
         <div class="mx-auto max-w-screen-md text-center mb-10 lg:mb-14">
           <h2 class="mb-4 font-display text-4xl sm:text-5xl tracking-tight font-semibold text-stone-900 dark:text-white">
@@ -14,31 +14,29 @@
         </div>
 
         <!-- Portraits -->
-        <div class="flex justify-center mb-16">
-          <div class="grid gap-x-10 gap-y-12 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
-            <div
-              v-for="tutor in tutors"
-              :key="tutor.id"
-              @click="openTutor(tutor)"
-              class="group cursor-pointer flex flex-col items-center text-center"
-            >
-              <div class="overflow-hidden rounded-3xl transition-transform duration-300 group-hover:scale-105">
-                <img
-                  :src="tutor.picture"
-                  :alt="tutor.name"
-                  class="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-64 lg:h-64 object-cover rounded-3xl ring-1 ring-stone-200 dark:ring-stone-700 shadow-md group-hover:ring-primary/40 transition-all duration-300"
-                />
-              </div>
-              <h3 class="mt-4 text-lg font-semibold text-stone-900 dark:text-white">{{ tutor.name }}</h3>
-              <span class="text-sm text-stone-500 dark:text-stone-400 group-hover:text-primary transition-colors">
-                View profile →
-              </span>
+        <div class="grid gap-x-5 gap-y-10 sm:gap-x-8 sm:gap-y-12 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 max-w-6xl mx-auto mb-16">
+          <div
+            v-for="tutor in tutors"
+            :key="tutor.id"
+            @click="openTutor(tutor)"
+            class="group cursor-pointer flex flex-col items-center text-center"
+          >
+            <div class="w-full overflow-hidden rounded-3xl transition-transform duration-300 group-hover:scale-105">
+              <img
+                :src="tutor.picture"
+                :alt="tutor.name"
+                class="w-full aspect-square object-cover rounded-3xl ring-1 ring-stone-200 dark:ring-stone-700 shadow-md group-hover:ring-primary/40 transition-all duration-300"
+              />
             </div>
+            <h3 class="mt-4 text-base sm:text-lg font-semibold text-stone-900 dark:text-white">{{ tutor.name }}</h3>
+            <span class="text-sm text-stone-500 dark:text-stone-400 group-hover:text-primary transition-colors">
+              View profile →
+            </span>
           </div>
         </div>
 
         <!-- Subjects Offered -->
-        <section class="bg-sand dark:bg-stone-800/40 border border-stone-200 dark:border-stone-700 py-16 px-6 rounded-2xl">
+        <section class="bg-sand dark:bg-stone-800/40 border border-stone-200 dark:border-stone-700 py-12 px-5 sm:py-16 sm:px-6 rounded-2xl">
           <div class="max-w-screen-lg mx-auto text-center">
             <h2 class="mb-4 font-display text-3xl sm:text-4xl tracking-tight font-semibold text-stone-900 dark:text-white">
               Subjects Offered
