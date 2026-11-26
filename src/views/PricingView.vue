@@ -1,8 +1,8 @@
 <template>
     <main class="grow bg-paper dark:bg-stone-900">
         <section>
-            <div class="py-12 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
-                <div class="mx-auto max-w-screen-md text-center mb-12 lg:mb-16">
+            <div class="py-12 px-4 mx-auto max-w-(--breakpoint-xl) lg:py-20 lg:px-6">
+                <div class="mx-auto max-w-(--breakpoint-md) text-center mb-12 lg:mb-16">
                     <h2 class="mb-6 font-display text-4xl sm:text-5xl tracking-tight font-semibold text-stone-900 dark:text-white">
                         Simple, transparent pricing
                     </h2>
@@ -42,25 +42,25 @@
                         <!-- Features list -->
                         <ul role="list" class="mb-8 space-y-4 text-left">
                             <li class="flex items-center space-x-3">
-                                <svg class="flex-shrink-0 w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="shrink-0 w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                                 <span>1-on-1 personalized tutoring</span>
                             </li>
                             <li class="flex items-center space-x-3">
-                                <svg class="flex-shrink-0 w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="shrink-0 w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                                 <span>Google Meet sessions</span>
                             </li>
                             <li class="flex items-center space-x-3">
-                                <svg class="flex-shrink-0 w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="shrink-0 w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                                 <span>Flexible scheduling</span>
                             </li>
                             <li class="flex items-center space-x-3">
-                                <svg class="flex-shrink-0 w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="shrink-0 w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                                 <span>Weekly personalized homework</span>
@@ -84,7 +84,7 @@
                             </h3>
                             <div class="space-y-6">
                                 <div class="flex items-start gap-4">
-                                    <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                                         <i class="fas fa-clipboard-list text-xl"></i>
                                     </div>
                                     <div>
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4">
-                                    <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                                         <i class="fas fa-chalkboard-teacher text-xl"></i>
                                     </div>
                                     <div>
@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4">
-                                    <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                                         <i class="fas fa-pencil-alt text-xl"></i>
                                     </div>
                                     <div>

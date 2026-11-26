@@ -1,0 +1,151 @@
+/* Wave Tutor brand theme. The admin portal (wavetutor-admin repo) keeps a copy of
+   this file at src/theme.css; update both when the brand changes. */
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-xs: 475px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --color-primary: #1780a3;
+  --color-secondary: #028090;
+  --color-tertiary: #e4fde1;
+  --color-quaternary: #456990;
+  --color-paper: #fffdf9;
+  --color-sand: #f5efe4;
+  --color-ink: #1c1a17;
+  --color-clay: #c2703d;
+
+  --font-sans:
+    Inter, system-ui, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  --backdrop-blur-xs: 2px;
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility btn-primary {
+  /* Solid teal primary button — no gradient, no bounce, just a subtle darken */
+  @apply inline-flex items-center justify-center gap-2 py-3 px-6 font-semibold text-white
+           bg-primary rounded-xl shadow-xs
+           hover:bg-secondary focus:outline-hidden focus:ring-2 focus:ring-primary/40 focus:ring-offset-2
+           focus:ring-offset-paper dark:focus:ring-offset-stone-900
+           transition-colors duration-200;
+}
+
+@utility btn-secondary {
+  /* Warm outline / ghost secondary button */
+  @apply inline-flex items-center justify-center gap-2 py-3 px-6 font-semibold
+           text-stone-800 dark:text-stone-100
+           bg-transparent rounded-xl border border-stone-300 dark:border-stone-600
+           hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary
+           focus:outline-hidden focus:ring-2 focus:ring-primary/40 focus:ring-offset-2
+           focus:ring-offset-paper dark:focus:ring-offset-stone-900
+           transition-colors duration-200;
+}
+
+@utility card {
+  /* Shared card surface: warm background, hairline border, soft shadow */
+  @apply bg-paper dark:bg-stone-800 rounded-2xl border border-stone-200 dark:border-stone-700
+           shadow-xs;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Match the browser canvas + form controls to the active theme so there
+       are no white flashes behind translucent surfaces in dark mode */
+    color-scheme: light dark;
+  }
+
+  body {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings use the warm display serif by default */
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+/* Custom scrollbar — solid teal, no gradient */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5efe4;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1780a3;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #028090;
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background-color: #1c1917;
+  }
+}
+
+/* Focus styles for better accessibility */
+*:focus-visible {
+  outline: 2px solid #1780a3;
+  outline-offset: 2px;
+}

@@ -1,10 +1,10 @@
 <template>
     <main class="grow bg-paper dark:bg-stone-900">
         <section class="py-12 lg:py-16">
-            <div class="px-4 mx-auto max-w-screen-xl lg:px-6">
+            <div class="px-4 mx-auto max-w-(--breakpoint-xl) lg:px-6">
 
                 <!-- Header -->
-                <div class="max-w-screen-md mx-auto text-center mb-12">
+                <div class="max-w-(--breakpoint-md) mx-auto text-center mb-12">
                     <h2 class="mb-6 font-display text-4xl sm:text-5xl tracking-tight font-semibold text-stone-900 dark:text-white">
                         Get in touch
                     </h2>
@@ -36,7 +36,7 @@
                     </div>
 
                     <!-- Sign Up Card -->
-                    <div class="p-6 sm:p-8 rounded-2xl border border-primary/20 bg-primary/[0.06] dark:bg-primary/10">
+                    <div class="p-6 sm:p-8 rounded-2xl border border-primary/20 bg-primary/6 dark:bg-primary/10">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mr-4">
                                 <i class="fas fa-graduation-cap text-xl"></i>

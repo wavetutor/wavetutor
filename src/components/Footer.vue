@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-sand dark:bg-stone-950 border-t border-stone-200 dark:border-stone-800">
-    <div class="max-w-screen-xl mx-auto px-4 py-12 lg:px-6">
+    <div class="max-w-(--breakpoint-xl) mx-auto px-4 py-12 lg:px-6">
       <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
         <!-- Brand -->
         <div class="max-w-sm">
@@ -28,13 +28,13 @@
             <h3 class="text-sm font-semibold uppercase tracking-wide text-stone-900 dark:text-stone-100 mb-4">Get in touch</h3>
             <ul class="space-y-3 text-stone-600 dark:text-stone-400">
               <li>
-                <a href="mailto:info@wavetutor.com" class="break-words hover:text-primary transition-colors">info@wavetutor.com</a>
+                <a href="mailto:info@wavetutor.com" class="wrap-break-word hover:text-primary transition-colors">info@wavetutor.com</a>
               </li>
               <li>
                 <a href="/signup/" class="hover:text-primary transition-colors">Sign up for tutoring</a>
               </li>
               <li>
-                <a href="https://forms.gle/pezRaRBtRWSqkjEo7" target="_blank" rel="noopener" class="hover:text-primary transition-colors">Become a tutor</a>
+                <a href="/apply/" class="hover:text-primary transition-colors">Become a tutor</a>
               </li>
             </ul>
           </div>

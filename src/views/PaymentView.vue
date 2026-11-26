@@ -1,8 +1,8 @@
 <template>
   <main class="grow grid place-items-center bg-paper dark:bg-stone-900">
     <section class="w-full">
-      <div class="py-12 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="max-w-screen-lg mx-auto sm:text-lg text-stone-800 dark:text-stone-300">
+      <div class="py-12 px-4 mx-auto max-w-(--breakpoint-xl) lg:py-16 lg:px-6">
+        <div class="max-w-(--breakpoint-lg) mx-auto sm:text-lg text-stone-800 dark:text-stone-300">
           <!-- Title -->
           <h2
             class="mb-6 font-display text-4xl sm:text-5xl tracking-tight font-semibold text-stone-900 dark:text-white"
@@ -30,7 +30,7 @@
               <span class="font-medium">$30</span> to @ruhangupta –
               <a
                 href="https://paypal.me/ruhangupta"
-                class="font-medium underline text-primary hover:text-secondary break-words"
+                class="font-medium underline text-primary hover:text-secondary wrap-break-word"
               >
                 paypal.me/ruhangupta
               </a>
@@ -49,7 +49,7 @@
 
           <!-- Thank you -->
           <h2
-            class="mb-4 font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-primary [text-wrap:balance] text-center mt-10"
+            class="mb-4 font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-primary text-balance text-center mt-10"
           >
             Thank you!
           </h2>

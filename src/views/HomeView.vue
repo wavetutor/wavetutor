@@ -2,7 +2,7 @@
   <main class="grow bg-paper dark:bg-stone-900">
     <!-- Hero Section -->
     <section class="relative overflow-hidden">
-      <div class="relative grid max-w-screen-xl px-4 py-14 mx-auto lg:gap-8 xl:gap-0 lg:py-24 lg:grid-cols-12 lg:items-center">
+      <div class="relative grid max-w-(--breakpoint-xl) px-4 py-14 mx-auto lg:gap-8 xl:gap-0 lg:py-24 lg:grid-cols-12 lg:items-center">
         <div class="mr-auto place-self-center lg:col-span-7 mb-10 lg:mb-0">
           <h1 class="text-center lg:text-left mb-6 font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.05] text-stone-900 dark:text-stone-50">
             This isn't like
@@ -30,15 +30,14 @@
           <img
             :src="Logo"
             alt="Wave Tutor Logo"
-            class="rounded-full h-80 w-80 object-cover ring-1 ring-stone-200 dark:ring-stone-700 shadow-lg"
-            style="outline: 8px solid white; outline-offset: -8px;"
+            class="h-80 w-80 rounded-full shadow-lg"
           />
         </div>
       </div>
 
       <!-- Inline stats strip -->
       <div class="border-y border-stone-200 dark:border-stone-800 bg-sand/60 dark:bg-stone-800/40">
-        <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
+        <div class="max-w-(--breakpoint-xl) mx-auto px-4 lg:px-6">
           <dl class="grid grid-cols-3 divide-x divide-stone-200 dark:divide-stone-800 text-center">
             <div class="py-8 px-2">
               <dt class="font-display text-3xl sm:text-4xl font-semibold text-primary">185+</dt>
@@ -60,7 +59,7 @@
     <!-- Narrative Statement -->
     <section class="bg-sand dark:bg-stone-800/40 py-16 lg:py-24">
       <div class="max-w-4xl mx-auto px-4 text-center lg:px-6">
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight text-stone-900 dark:text-white [text-wrap:balance]">
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight text-stone-900 dark:text-white text-balance">
           For three years, Wave Tutor has helped students across the United States thrive through
           <span class="text-primary">personalized education</span>.
         </h2>
@@ -69,7 +68,7 @@
 
     <!-- Testimonial Section -->
     <section class="bg-paper dark:bg-stone-900 py-16 lg:py-24">
-      <div class="max-w-screen-xl px-4 mx-auto lg:px-6">
+      <div class="max-w-(--breakpoint-xl) px-4 mx-auto lg:px-6">
         <div class="mx-auto mb-12 max-w-2xl lg:mb-16 text-center">
           <h2 class="mb-4 font-display text-3xl sm:text-4xl font-semibold text-stone-900 dark:text-white">
             What families are saying
@@ -91,7 +90,7 @@
               </p>
             </blockquote>
             <figcaption class="flex items-center">
-              <img class="w-12 h-12 flex-shrink-0 rounded-full object-cover ring-1 ring-stone-200 dark:ring-stone-700" :src="JyotiTestImg" alt="Jyoti V., and family" />
+              <img class="w-12 h-12 shrink-0 rounded-full object-cover ring-1 ring-stone-200 dark:ring-stone-700" :src="JyotiTestImg" alt="Jyoti V., and family" />
               <div class="ml-4">
                 <div class="font-semibold text-stone-900 dark:text-white">Suraj &amp; Jyoti V.</div>
                 <div class="text-sm text-stone-500 dark:text-stone-400">Oregon • Math and English since August 2023</div>
@@ -110,7 +109,7 @@
               </p>
             </blockquote>
             <figcaption class="flex items-center">
-              <div class="w-12 h-12 flex-shrink-0 rounded-full bg-primary flex items-center justify-center">
+              <div class="w-12 h-12 shrink-0 rounded-full bg-primary flex items-center justify-center">
                 <span class="text-white font-semibold text-lg">B</span>
               </div>
               <div class="ml-4">
@@ -125,7 +124,7 @@
 
     <!-- Why Choose Wave Tutor -->
     <section class="bg-sand dark:bg-stone-800/40 py-16 lg:py-24">
-      <div class="max-w-screen-xl px-4 mx-auto lg:px-6">
+      <div class="max-w-(--breakpoint-xl) px-4 mx-auto lg:px-6">
         <div class="max-w-2xl mb-12 lg:mb-16">
           <h2 class="mb-4 font-display text-3xl sm:text-4xl font-semibold text-stone-900 dark:text-white">
             Why choose Wave Tutor?
@@ -185,14 +184,14 @@
 
     <!-- CTA Band -->
     <section class="bg-primary">
-      <div class="max-w-screen-xl px-4 mx-auto py-16 lg:py-20 lg:px-6 text-center">
+      <div class="max-w-(--breakpoint-xl) px-4 mx-auto py-16 lg:py-20 lg:px-6 text-center">
         <h2 class="text-3xl sm:text-4xl font-display font-semibold text-white mb-4">
           Ready to experience the difference?
         </h2>
         <p class="text-white/90 mb-8 max-w-2xl mx-auto text-lg">
           Join students across the U.S. who have transformed learning with Wave Tutor.
         </p>
-        <a href="/signup/" class="inline-flex items-center justify-center gap-2 py-3.5 px-8 font-semibold text-primary bg-white rounded-xl shadow-sm hover:bg-stone-100 transition-colors duration-200">
+        <a href="/signup/" class="inline-flex items-center justify-center gap-2 py-3.5 px-8 font-semibold text-primary bg-white rounded-xl shadow-xs hover:bg-stone-100 transition-colors duration-200">
           Get Started Today
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -203,7 +202,7 @@
 
     <!-- Our Team -->
     <section class="bg-paper dark:bg-stone-900 py-16 lg:py-24">
-      <div class="px-4 mx-auto max-w-screen-xl text-center lg:px-6">
+      <div class="px-4 mx-auto max-w-(--breakpoint-xl) text-center lg:px-6">
         <h2 class="mb-12 lg:mb-16 font-display text-3xl sm:text-4xl font-semibold text-stone-900 dark:text-white">Our Team</h2>
         <div class="grid gap-10 lg:gap-16 sm:grid-cols-3">
           <div class="text-center" v-for="person in team" :key="person.name">
@@ -233,18 +232,14 @@
 
     <!-- Aspiring Tutors Section -->
     <section class="bg-sand dark:bg-stone-800/40 py-16 lg:py-20">
-      <div class="max-w-screen-xl px-4 mx-auto text-center lg:px-6">
+      <div class="max-w-(--breakpoint-xl) px-4 mx-auto text-center lg:px-6">
         <h2 class="mb-4 font-display text-3xl font-semibold text-stone-900 dark:text-white">Want to join our team of tutors?</h2>
         <p class="mb-8 text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
           We're always looking for passionate educators. If you're interested in becoming a Wave Tutor, fill out our application form.
         </p>
-        <a
-          href="https://forms.gle/pezRaRBtRWSqkjEo7"
-          target="_blank"
-          rel="noopener"
-          class="btn-secondary">
+        <router-link to="/apply/" class="btn-secondary">
           Apply to be a tutor
-        </a>
+        </router-link>
       </div>
     </section>
 
@@ -252,13 +247,14 @@
 </template>
 
 <script setup lang="ts">
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import JyotiTestImg from "../assets/jyoti-test.jpg";
 import ruhan from "../assets/credits/ruhan.jpeg";
-import vedanti from "../assets/credits/vedanti.png";
-import nikhil from "../assets/credits/nikhil.jpg";
-import rishabh from "../assets/credits/rishabh.png";
-import aaron from "../assets/credits/aaron.jpg";
+// Tutor photos are served from public/img/tutors (shared with the admin-managed profiles).
+const vedanti = "/img/tutors/vedanti.jpg";
+const nikhil = "/img/tutors/nikhil.jpg";
+const rishabh = "/img/tutors/rishabh.jpg";
+const aaron = "/img/tutors/aaron.jpg";
 
 // Team members data
 const team = shuffle([

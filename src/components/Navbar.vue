@@ -1,6 +1,6 @@
 <template>
   <nav class="bg-paper/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 sticky top-0 z-50">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div class="max-w-(--breakpoint-xl) flex flex-wrap items-center justify-between mx-auto p-4">
       <router-link to="/" class="flex items-center group">
         <img src="/icons/icon-192.png" class="h-8 w-8 mr-3 transition-transform duration-300 group-hover:scale-105" alt="Wavetutor logo" />
         <span class="self-center text-2xl font-display font-semibold whitespace-nowrap text-stone-900 dark:text-stone-50">
@@ -15,7 +15,7 @@
           </button>
         </a>
 
-        <button @click="navbarExpanded = !navbarExpanded" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-stone-500 rounded-lg md:hidden hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-stone-200 dark:text-stone-400 dark:hover:bg-stone-800 dark:focus:ring-stone-700 transition-colors" aria-controls="navbar-cta" :aria-expanded="navbarExpanded">
+        <button @click="navbarExpanded = !navbarExpanded" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-stone-500 rounded-lg md:hidden hover:bg-stone-100 focus:outline-hidden focus:ring-2 focus:ring-stone-200 dark:text-stone-400 dark:hover:bg-stone-800 dark:focus:ring-stone-700 transition-colors" aria-controls="navbar-cta" :aria-expanded="navbarExpanded">
           <span class="sr-only">Open main menu</span>
           <!-- Hamburger icon with animation -->
           <div class="relative">

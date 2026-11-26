@@ -2,9 +2,9 @@
   <main class="grow">
     <!-- Tutors Grid -->
     <section class="bg-paper dark:bg-stone-900 min-h-screen">
-      <div class="py-12 px-4 mx-auto max-w-screen-xl sm:px-6 lg:py-24 lg:px-12">
+      <div class="py-12 px-4 mx-auto max-w-(--breakpoint-xl) sm:px-6 lg:py-24 lg:px-12">
         <!-- Header -->
-        <div class="mx-auto max-w-screen-md text-center mb-10 lg:mb-14">
+        <div class="mx-auto max-w-(--breakpoint-md) text-center mb-10 lg:mb-14">
           <h2 class="mb-4 font-display text-4xl sm:text-5xl tracking-tight font-semibold text-stone-900 dark:text-white">
             Our Tutors
           </h2>
@@ -37,7 +37,7 @@
 
         <!-- Subjects Offered -->
         <section class="bg-sand dark:bg-stone-800/40 border border-stone-200 dark:border-stone-700 py-12 px-5 sm:py-16 sm:px-6 rounded-2xl">
-          <div class="max-w-screen-lg mx-auto text-center">
+          <div class="max-w-(--breakpoint-lg) mx-auto text-center">
             <h2 class="mb-4 font-display text-3xl sm:text-4xl tracking-tight font-semibold text-stone-900 dark:text-white">
               Subjects Offered
             </h2>
@@ -72,14 +72,14 @@
         <button
           @click="closeTutor"
           aria-label="Close profile"
-          class="fixed top-5 right-5 z-10 w-11 h-11 flex items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:text-primary hover:bg-stone-200 dark:hover:bg-stone-700 shadow-sm transition-colors"
+          class="fixed top-5 right-5 z-10 w-11 h-11 flex items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:text-primary hover:bg-stone-200 dark:hover:bg-stone-700 shadow-xs transition-colors"
         >
           <i class="fas fa-times text-lg"></i>
         </button>
 
         <div class="min-h-full max-w-6xl mx-auto px-5 py-16 sm:px-8 sm:py-20 lg:px-12 flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-16">
           <!-- Left: photo, name, bio, subjects -->
-          <aside class="lg:w-80 flex-shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <aside class="lg:w-80 shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left">
             <img
               :src="selectedTutor.picture"
               :alt="selectedTutor.name"
@@ -115,9 +115,9 @@
                 :key="i"
                 :style="{ transitionDelay: `${i * 100}ms` }"
                 class="flex items-start gap-4 py-4 opacity-0 -translate-y-3 transition-all duration-500 ease-out"
-                :class="{ 'opacity-100 !translate-y-0': showAcc }"
+                :class="{ 'opacity-100 translate-y-0!': showAcc }"
               >
-                <span class="flex-shrink-0 mt-[0.7rem] w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="shrink-0 mt-[0.7rem] w-1.5 h-1.5 rounded-full bg-primary"></span>
                 <span class="text-lg sm:text-xl text-stone-800 dark:text-stone-100 leading-snug">
                   {{ acc }}
                 </span>
@@ -134,20 +134,15 @@
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-// Vite static imports
-const imageMap = {
-  vedanti: new URL('@/assets/credits/vedanti.png', import.meta.url).href,
-  nikhil:  new URL('@/assets/credits/nikhil.jpg', import.meta.url).href,
-  rishabh: new URL('@/assets/credits/rishabh.png', import.meta.url).href,
-  aaron:   new URL('@/assets/credits/aaron.jpg', import.meta.url).href,
-}
+import { SUBJECT_GROUPS as subjects } from '../lib/options'
 
-const tutors = [
+// Shown if the live profiles can't be loaded. Profiles are edited in the admin portal.
+const FALLBACK_TUTORS = [
   {
     id: 'vedanti',
     name: 'Vedanti Patil',
     bio: "Hey there! I'm Vedanti, a student at Westwood High School. I'm passionate about biology and neuroscience. In my free time, I enjoy creating art, spending time with my friends, and writing for my school's newspaper.",
-    picture: imageMap.vedanti,
+    picture: '/img/tutors/vedanti.jpg',
     accomplishments: [
       'State Champion for UIL District Science',
       '2nd Place Nationally at NSF Senior Brain Bee',
@@ -166,7 +161,7 @@ const tutors = [
     id: 'nikhil',
     name: 'Nikhil Gupta',
     bio: "Hello! My name is Nikhil, and I am a student at Westwood High School. I'm passionate about math, programming, writing, and chess. I enjoy reading, writing, talking to friends, and listening to music in my free time.",
-    picture: imageMap.nikhil,
+    picture: '/img/tutors/nikhil.jpg',
     accomplishments: [
       '3x Tournament of Champions Qualifier',
       'Top 8 internationally on the National Debate Coach Association Baker Cup',
@@ -183,7 +178,7 @@ const tutors = [
     id: 'rishabh',
     name: 'Rishabh Susarla',
     bio: "Hey! My name is Rishabh, and I'm a student at Westwood High School. I enjoy doing math and physics, and I'm really excited to go deeper with these topics with you! I enjoy playing video games, talking with friends, listening to music, and procrastinating for hours in my free time.",
-    picture: imageMap.rishabh,
+    picture: '/img/tutors/rishabh.jpg',
     accomplishments: [
       '4.0 GPA in high school',
       '790 Math SAT Score in 8th Grade',
@@ -196,7 +191,7 @@ const tutors = [
     id: 'aaron',
     name: 'Aaron Fan',
     bio: "Hey, I'm Aaron! I love learning math and competing in math competitions all across the country. In my free time I like to procrastinate, read and play Brawl Stars.",
-    picture: imageMap.aaron,
+    picture: '/img/tutors/aaron.jpg',
     accomplishments: [
       '5x AIME Qualifier (2022, 2023, 2024, 2025, 2026)',
       'Mathcounts State 2nd Place Team (2022, 2023) and Top 13 (2023)',
@@ -206,12 +201,32 @@ const tutors = [
   }
 ]
 
-const subjects = [
-  { subject: "Math",        topics: ["Prealgebra", "Algebra I", "Geometry", "Algebra II", "Precalculus (AP)", "Probability", "Calculus (AP: AB, BC)"] },
-  { subject: "Science",     topics: ["Biology (Honors, AP)", "Chemistry (Honors)", "Physics (Honors, AP)", "Psychology", "Neuroscience/Brain Bee", "Human Anatomy & Physiology"] },
-  { subject: "Test Prep",   topics: ["SAT Prep: Math, R&W", "AMC 8", "AP Testing", "STAAR Testing"] },
-  { subject: "More",        topics: ["English/Writing", "Debate", "Chess"] },
-]
+const tutors = ref(FALLBACK_TUTORS)
+
+// Published profiles from the admin portal (wavetutor-admin: /profiles).
+async function loadProfiles() {
+  try {
+    const [{ db }, { collection, getDocs, query, where }] = await Promise.all([
+      import('../lib/firebase'),
+      import('firebase/firestore/lite'),
+    ])
+    const snap = await getDocs(query(collection(db, 'profiles'), where('published', '==', true)))
+    const live = snap.docs
+      .map((d) => d.data())
+      .sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
+      .map((p) => ({
+        id: p.slug,
+        name: p.name,
+        bio: p.bio,
+        picture: p.photoUrl,
+        accomplishments: p.accomplishments ?? [],
+        subjects: p.subjects ?? [],
+      }))
+    if (live.length) tutors.value = live
+  } catch (e) {
+    console.warn('Using built-in tutor list:', e)
+  }
+}
 
 const route  = useRoute()
 const router = useRouter()
@@ -227,7 +242,7 @@ function openTutor(tutor) {
 }
 
 function openById(id) {
-  const tutor = tutors.find(t => t.id === id)
+  const tutor = tutors.value.find(t => t.id === id)
   if (tutor) openTutor(tutor)
 }
 
@@ -244,9 +259,11 @@ function onKeydown(e) {
 }
 
 // Deep-link support: /tutors/?tutor=<id> auto-opens that profile
-onMounted(() => {
+onMounted(async () => {
   window.addEventListener('keydown', onKeydown)
   if (route.query.tutor) openById(String(route.query.tutor))
+  await loadProfiles()
+  if (route.query.tutor && !selectedTutor.value) openById(String(route.query.tutor))
 })
 
 watch(() => route.query.tutor, (id) => {
