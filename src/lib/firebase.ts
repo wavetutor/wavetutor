@@ -17,7 +17,7 @@ const firebaseConfig = {
 
 // reCAPTCHA Enterprise site key for App Check (bot protection on the forms).
 // Same key as the admin portal's RECAPTCHA_SITE_KEY. Empty = off.
-const RECAPTCHA_SITE_KEY = ''
+const RECAPTCHA_SITE_KEY = '6Lev6zIuAAAAAG3-G1TNN_WijnOlN9kgK17JEHVV'
 
 const useEmulators = import.meta.env.VITE_USE_EMULATORS === 'true'
 
