@@ -22,32 +22,32 @@
             <h2 class="text-xl font-semibold text-stone-900 dark:text-white">About you</h2>
             <div class="grid gap-5 sm:grid-cols-2">
               <Field id="first" label="First name" :error="errors.first">
-                <input id="first" v-model="f.first" class="field-input" autocomplete="given-name" />
+                <input id="first" maxlength="60" v-model="f.first" class="field-input" autocomplete="given-name" />
               </Field>
               <Field id="last" label="Last name" :error="errors.last">
-                <input id="last" v-model="f.last" class="field-input" autocomplete="family-name" />
+                <input id="last" maxlength="60" v-model="f.last" class="field-input" autocomplete="family-name" />
               </Field>
             </div>
             <div class="grid gap-5 sm:grid-cols-2">
               <Field id="email" label="Email" :error="errors.email">
-                <input id="email" v-model="f.email" type="email" class="field-input" autocomplete="email" />
+                <input id="email" maxlength="120" v-model="f.email" type="email" class="field-input" autocomplete="email" />
               </Field>
               <Field id="phone" label="Phone" :error="errors.phone">
-                <input id="phone" v-model="f.phone" type="tel" class="field-input" autocomplete="tel" />
+                <input id="phone" :value="f.phone" type="tel" inputmode="tel" maxlength="22" class="field-input" autocomplete="tel" placeholder="(512) 555-0142" @input="onPhone($event, (v) => (f.phone = v))" />
               </Field>
             </div>
             <Field id="discord" label="Discord username" :error="errors.discord">
-              <input id="discord" v-model="f.discord" class="field-input" autocomplete="off" />
+              <input id="discord" maxlength="40" v-model="f.discord" class="field-input" autocomplete="off" />
             </Field>
             <Field id="over18" label="Are you 18 or older?" as="group" :error="errors.over18">
               <Chips v-model="f.over18" :options="['Yes', 'No']" labelledby="over18-label" />
             </Field>
             <div class="grid gap-5 sm:grid-cols-2">
               <Field id="grade" label="Grade or year" optional>
-                <input id="grade" v-model="f.gradeOrYear" class="field-input" placeholder="11th grade, college sophomore" />
+                <input id="grade" maxlength="60" v-model="f.gradeOrYear" class="field-input" placeholder="11th grade, college sophomore" />
               </Field>
               <Field id="school" label="School" optional>
-                <input id="school" v-model="f.school" class="field-input" />
+                <input id="school" maxlength="120" v-model="f.school" class="field-input" />
               </Field>
             </div>
             <Field id="hours" label="Hours you can tutor per week" as="group">
@@ -68,13 +68,13 @@
                   <Chips v-model="f.subjects" :options="g.topics" multiple labelledby="subjects-label" />
                 </div>
               </div>
-              <input v-model="f.subjectsOther" class="field-input mt-3" placeholder="Other subjects or skills" aria-label="Other subjects" />
+              <input v-model="f.subjectsOther" maxlength="300" class="field-input mt-3" placeholder="Other subjects or skills" aria-label="Other subjects" />
             </Field>
             <Field id="qualifications" label="Qualifications" :error="errors.qualifications">
-              <textarea id="qualifications" v-model="f.qualifications" rows="4" class="field-input" placeholder="Grades, scores, awards, past tutoring" />
+              <textarea id="qualifications" maxlength="3000" v-model="f.qualifications" rows="4" class="field-input" placeholder="Grades, scores, awards, past tutoring" />
             </Field>
             <Field id="fit" label="Why would you be a good fit?" :error="errors.whyFit">
-              <textarea id="fit" v-model="f.whyFit" rows="5" class="field-input" />
+              <textarea id="fit" maxlength="2400" v-model="f.whyFit" rows="5" class="field-input" />
               <p class="mt-1 text-right text-sm tabular-nums" :class="words > 200 ? 'text-rose-600' : 'text-stone-500'">{{ words }} / 200 words</p>
             </Field>
           </fieldset>
@@ -116,6 +116,7 @@ import { computed, onMounted, reactive, ref, watch } from 'vue'
 import Logo from '../assets/logo.png'
 import Chips from '../components/form/Chips.vue'
 import Field from '../components/form/Field.vue'
+import { formatPhone, phoneError } from '../lib/phone'
 import { HOURS_PER_WEEK, SUBJECT_GROUPS, TIMEZONES } from '../lib/options'
 
 const f = reactive({
@@ -135,6 +136,13 @@ const f = reactive({
   whyFit: '',
   friendRequestsOn: false,
 })
+/** Format the phone number as it's typed; writes back to the box so stripped characters disappear. */
+function onPhone(e: Event, set: (v: string) => void) {
+  const el = e.target as HTMLInputElement
+  const v = formatPhone(el.value)
+  if (el.value !== v) el.value = v
+  set(v)
+}
 const honeypot = ref('')
 const errors = reactive<Record<string, string>>({})
 const sending = ref(false)
@@ -157,7 +165,8 @@ function validate() {
   if (!f.first.trim()) errors.first = 'Add your first name.'
   if (!f.last.trim()) errors.last = 'Add your last name.'
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.trim())) errors.email = 'Add an email we can reply to.'
-  if (f.phone.replace(/\D/g, '').length < 7) errors.phone = 'Add a phone number.'
+  if (!f.phone.trim()) errors.phone = 'Add a phone number.'
+  else if (phoneError(f.phone)) errors.phone = phoneError(f.phone)
   if (f.discord.trim().length < 2) errors.discord = 'Add your Discord username. That is how we contact applicants.'
   if (!f.over18) errors.over18 = 'Choose yes or no.'
   if (!f.subjects.length && !f.subjectsOther.trim()) errors.subjects = 'Pick at least one subject.'

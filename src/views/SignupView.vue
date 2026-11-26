@@ -11,10 +11,10 @@
             <h2 class="text-xl font-semibold text-stone-900 dark:text-white">You</h2>
             <div class="grid gap-5 sm:grid-cols-2">
               <Field id="parent-first" label="First name" :error="errors.parentFirst">
-                <input id="parent-first" v-model="f.parentFirst" class="field-input" autocomplete="given-name" />
+                <input id="parent-first" maxlength="60" v-model="f.parentFirst" class="field-input" autocomplete="given-name" />
               </Field>
               <Field id="parent-last" label="Last name" :error="errors.parentLast">
-                <input id="parent-last" v-model="f.parentLast" class="field-input" autocomplete="family-name" />
+                <input id="parent-last" maxlength="60" v-model="f.parentLast" class="field-input" autocomplete="family-name" />
               </Field>
             </div>
             <Field id="relationship" label="Relationship to the student" as="group">
@@ -22,10 +22,10 @@
             </Field>
             <div class="grid gap-5 sm:grid-cols-2">
               <Field id="email" label="Email" :error="errors.parentEmail">
-                <input id="email" v-model="f.parentEmail" type="email" class="field-input" autocomplete="email" />
+                <input id="email" maxlength="120" v-model="f.parentEmail" type="email" class="field-input" autocomplete="email" />
               </Field>
               <Field id="phone" label="Phone" :error="errors.parentPhone">
-                <input id="phone" v-model="f.parentPhone" type="tel" class="field-input" autocomplete="tel" />
+                <input id="phone" :value="f.parentPhone" type="tel" inputmode="tel" maxlength="22" class="field-input" autocomplete="tel" placeholder="(512) 555-0142" @input="onPhone($event, (v) => (f.parentPhone = v))" />
               </Field>
             </div>
             <Field id="contact" label="Best way to reach you" as="group">
@@ -43,10 +43,10 @@
               </div>
               <div class="grid gap-5 sm:grid-cols-2">
                 <Field :id="`student-${i}`" label="First name" :error="i === 0 ? errors.studentFirst : undefined">
-                  <input :id="`student-${i}`" v-model="s.first" class="field-input" />
+                  <input :id="`student-${i}`" maxlength="60" v-model="s.first" class="field-input" />
                 </Field>
                 <Field :id="`student-last-${i}`" label="Last name" :error="i === 0 ? errors.studentLast : undefined">
-                  <input :id="`student-last-${i}`" v-model="s.last" class="field-input" />
+                  <input :id="`student-last-${i}`" maxlength="60" v-model="s.last" class="field-input" />
                 </Field>
               </div>
               <Field :id="`grade-${i}`" label="Grade" as="group" optional>
@@ -57,7 +57,7 @@
               Add a sibling
             </button>
             <Field id="school" label="School" optional>
-              <input id="school" v-model="f.school" class="field-input" />
+              <input id="school" maxlength="120" v-model="f.school" class="field-input" />
             </Field>
           </fieldset>
 
@@ -71,19 +71,19 @@
                   <Chips v-model="f.subjects" :options="g.topics" multiple :labelledby="'subjects-label'" />
                 </div>
               </div>
-              <input v-model="f.subjectsOther" class="field-input mt-3" placeholder="Something else? Tell us here" aria-label="Other subjects" />
+              <input v-model="f.subjectsOther" maxlength="300" class="field-input mt-3" placeholder="Something else? Tell us here" aria-label="Other subjects" />
             </Field>
             <Field id="format" label="Online or in person" as="group">
               <Chips v-model="f.format" :options="FORMATS" labelledby="format-label" />
             </Field>
             <Field id="availability" label="When is the student usually free?" optional>
-              <textarea id="availability" v-model="f.availability" rows="2" class="field-input" placeholder="Weekdays after 5, Sunday afternoons" />
+              <textarea id="availability" maxlength="500" v-model="f.availability" rows="2" class="field-input" placeholder="Weekdays after 5, Sunday afternoons" />
             </Field>
             <Field id="timezone" label="Time zone" as="group">
               <Chips v-model="f.timezone" :options="TIMEZONES" labelledby="timezone-label" />
             </Field>
             <Field id="preferred" label="Preferred tutor" optional>
-              <input id="preferred" v-model="f.preferredTutor" class="field-input" />
+              <input id="preferred" maxlength="60" v-model="f.preferredTutor" class="field-input" />
             </Field>
           </fieldset>
 
@@ -91,10 +91,10 @@
             <legend class="sr-only">Anything else</legend>
             <Field id="heard" label="How did you hear about us?" as="group">
               <Chips v-model="f.heardFrom" :options="HEARD_FROM" multiple labelledby="heard-label" />
-              <input v-model="f.heardFromOther" class="field-input mt-3" placeholder="Someone specific? Let us know" aria-label="Heard from, other" />
+              <input v-model="f.heardFromOther" maxlength="200" class="field-input mt-3" placeholder="Someone specific? Let us know" aria-label="Heard from, other" />
             </Field>
             <Field id="notes" label="Anything else we should know?" optional>
-              <textarea id="notes" v-model="f.applicantNotes" rows="3" class="field-input" />
+              <textarea id="notes" maxlength="2000" v-model="f.applicantNotes" rows="3" class="field-input" />
             </Field>
             <!-- Bots fill every field; people never see this one. -->
             <div class="hidden" aria-hidden="true">
@@ -124,6 +124,7 @@ import { onMounted, reactive, ref, watch } from 'vue'
 import Logo from '../assets/logo.png'
 import Chips from '../components/form/Chips.vue'
 import Field from '../components/form/Field.vue'
+import { formatPhone, phoneError } from '../lib/phone'
 import { CONTACT_METHODS, FORMATS, GRADES, HEARD_FROM, RELATIONSHIPS, SUBJECT_GROUPS, TIMEZONES } from '../lib/options'
 
 const f = reactive({
@@ -146,6 +147,13 @@ const f = reactive({
   applicantNotes: '',
 })
 const fullName = (first: string, last: string) => `${first.trim()} ${last.trim()}`.trim()
+/** Format the phone number as it's typed; writes back to the box so stripped characters disappear. */
+function onPhone(e: Event, set: (v: string) => void) {
+  const el = e.target as HTMLInputElement
+  const v = formatPhone(el.value)
+  if (el.value !== v) el.value = v
+  set(v)
+}
 const honeypot = ref('')
 const errors = reactive<Record<string, string>>({})
 const sending = ref(false)
@@ -165,7 +173,8 @@ function validate() {
   if (!f.parentFirst.trim()) errors.parentFirst = 'Add your first name.'
   if (!f.parentLast.trim()) errors.parentLast = 'Add your last name.'
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.parentEmail.trim())) errors.parentEmail = 'Add an email we can reply to.'
-  if (f.parentPhone.replace(/\D/g, '').length < 7) errors.parentPhone = 'Add a phone number.'
+  if (!f.parentPhone.trim()) errors.parentPhone = 'Add a phone number.'
+  else if (phoneError(f.parentPhone)) errors.parentPhone = phoneError(f.parentPhone)
   if (!f.students[0].first.trim()) errors.studentFirst = "Add the student's first name."
   if (!f.students[0].last.trim()) errors.studentLast = "Add the student's last name."
   if (!f.subjects.length && !f.subjectsOther.trim()) errors.subjects = 'Pick a subject, or describe it below.'
