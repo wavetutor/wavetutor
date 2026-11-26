@@ -20,9 +20,14 @@
           <fieldset class="card space-y-5 p-5 sm:p-6">
             <legend class="sr-only">About you</legend>
             <h2 class="text-xl font-semibold text-stone-900 dark:text-white">About you</h2>
-            <Field id="name" label="Full name" :error="errors.name">
-              <input id="name" v-model="f.name" class="field-input" autocomplete="name" />
-            </Field>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <Field id="first" label="First name" :error="errors.first">
+                <input id="first" v-model="f.first" class="field-input" autocomplete="given-name" />
+              </Field>
+              <Field id="last" label="Last name" :error="errors.last">
+                <input id="last" v-model="f.last" class="field-input" autocomplete="family-name" />
+              </Field>
+            </div>
             <div class="grid gap-5 sm:grid-cols-2">
               <Field id="email" label="Email" :error="errors.email">
                 <input id="email" v-model="f.email" type="email" class="field-input" autocomplete="email" />
@@ -106,7 +111,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, ref, watch } from 'vue'
+import { computed, onMounted, reactive, ref, watch } from 'vue'
 
 import Logo from '../assets/logo.png'
 import Chips from '../components/form/Chips.vue'
@@ -114,7 +119,8 @@ import Field from '../components/form/Field.vue'
 import { HOURS_PER_WEEK, SUBJECT_GROUPS, TIMEZONES } from '../lib/options'
 
 const f = reactive({
-  name: '',
+  first: '',
+  last: '',
   email: '',
   phone: '',
   discord: '',
@@ -135,15 +141,21 @@ const sending = ref(false)
 const sent = ref(false)
 const submitError = ref('')
 const tried = ref(false)
+// Load the database code while the form is being filled in, so Send is instant.
+onMounted(() => {
+  import('../lib/firebase').catch(() => {})
+  import('firebase/firestore/lite').catch(() => {})
+})
 // After the first submit attempt, re-check as people fix things so stale errors disappear.
 watch(f, () => tried.value && validate(), { deep: true })
 const words = computed(() => f.whyFit.trim().split(/\s+/).filter(Boolean).length)
 
-const fieldIds: Record<string, string> = { name: 'name', email: 'email', phone: 'phone', discord: 'discord', over18: 'over18-label', subjects: 'subjects-label', qualifications: 'qualifications', whyFit: 'fit' }
+const fieldIds: Record<string, string> = { first: 'first', last: 'last', email: 'email', phone: 'phone', discord: 'discord', over18: 'over18-label', subjects: 'subjects-label', qualifications: 'qualifications', whyFit: 'fit' }
 
 function validate() {
   for (const k of Object.keys(errors)) delete errors[k]
-  if (!f.name.trim()) errors.name = 'Add your name.'
+  if (!f.first.trim()) errors.first = 'Add your first name.'
+  if (!f.last.trim()) errors.last = 'Add your last name.'
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.trim())) errors.email = 'Add an email we can reply to.'
   if (f.phone.replace(/\D/g, '').length < 7) errors.phone = 'Add a phone number.'
   if (f.discord.trim().length < 2) errors.discord = 'Add your Discord username. That is how we contact applicants.'
@@ -175,7 +187,7 @@ async function submit() {
     await addDoc(collection(db, 'tutorApplications'), {
       status: 'new',
       source: 'website',
-      name: f.name.trim(),
+      name: `${f.first.trim()} ${f.last.trim()}`,
       email: f.email.trim().toLowerCase(),
       phone: f.phone.trim(),
       discord: f.discord.trim(),

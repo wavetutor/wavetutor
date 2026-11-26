@@ -9,9 +9,14 @@
           <fieldset class="card space-y-5 p-5 sm:p-6">
             <legend class="sr-only">Parent</legend>
             <h2 class="text-xl font-semibold text-stone-900 dark:text-white">You</h2>
-            <Field id="parent-name" label="Your name" :error="errors.parentName">
-              <input id="parent-name" v-model="f.parentName" class="field-input" autocomplete="name" />
-            </Field>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <Field id="parent-first" label="First name" :error="errors.parentFirst">
+                <input id="parent-first" v-model="f.parentFirst" class="field-input" autocomplete="given-name" />
+              </Field>
+              <Field id="parent-last" label="Last name" :error="errors.parentLast">
+                <input id="parent-last" v-model="f.parentLast" class="field-input" autocomplete="family-name" />
+              </Field>
+            </div>
             <Field id="relationship" label="Relationship to the student" as="group">
               <Chips v-model="f.relationship" :options="RELATIONSHIPS" labelledby="relationship-label" />
             </Field>
@@ -32,17 +37,23 @@
             <legend class="sr-only">Student</legend>
             <h2 class="text-xl font-semibold text-stone-900 dark:text-white">{{ f.students.length > 1 ? 'Students' : 'Student' }}</h2>
             <div v-for="(s, i) in f.students" :key="i" class="space-y-3" :class="i > 0 && 'border-t border-stone-200 pt-5 dark:border-stone-700'">
-              <Field :id="`student-${i}`" :label="f.students.length > 1 ? `Student ${i + 1} name` : 'Student name'" :error="i === 0 ? errors.students : undefined">
-                <div class="flex gap-2">
-                  <input :id="`student-${i}`" v-model="s.name" class="field-input" />
-                  <button v-if="i > 0" type="button" class="shrink-0 rounded-lg px-3 text-sm font-medium text-stone-500 hover:text-rose-600" @click="f.students.splice(i, 1)">Remove</button>
-                </div>
-              </Field>
+              <div class="flex items-center justify-between" v-if="f.students.length > 1">
+                <p class="text-sm font-semibold text-stone-500 dark:text-stone-400">Student {{ i + 1 }}</p>
+                <button v-if="i > 0" type="button" class="rounded-lg px-2 text-sm font-medium text-stone-500 hover:text-rose-600" @click="f.students.splice(i, 1)">Remove</button>
+              </div>
+              <div class="grid gap-5 sm:grid-cols-2">
+                <Field :id="`student-${i}`" label="First name" :error="i === 0 ? errors.studentFirst : undefined">
+                  <input :id="`student-${i}`" v-model="s.first" class="field-input" />
+                </Field>
+                <Field :id="`student-last-${i}`" label="Last name" :error="i === 0 ? errors.studentLast : undefined">
+                  <input :id="`student-last-${i}`" v-model="s.last" class="field-input" />
+                </Field>
+              </div>
               <Field :id="`grade-${i}`" label="Grade" as="group" optional>
                 <Chips v-model="s.grade" :options="GRADES" :labelledby="`grade-${i}-label`" />
               </Field>
             </div>
-            <button v-if="f.students.length < 4" type="button" class="text-sm font-semibold text-primary hover:text-secondary" @click="f.students.push({ name: '', grade: '' })">
+            <button v-if="f.students.length < 4" type="button" class="text-sm font-semibold text-primary hover:text-secondary" @click="f.students.push({ first: '', last: f.students[0].last, grade: '' })">
               Add a sibling
             </button>
             <Field id="school" label="School" optional>
@@ -99,7 +110,7 @@
 
       <div v-else class="py-16 text-center">
         <img :src="Logo" alt="" class="mx-auto h-20 w-20" />
-        <h1 class="mt-6 font-display text-4xl font-semibold text-stone-900 dark:text-white">Thanks, {{ f.parentName.split(' ')[0] }}</h1>
+        <h1 class="mt-6 font-display text-4xl font-semibold text-stone-900 dark:text-white">Thanks, {{ f.parentFirst.trim() }}</h1>
         <p class="mt-3 text-lg text-stone-600 dark:text-stone-300">We got your signup and will reach out within a day.</p>
         <router-link to="/" class="btn-secondary mt-8">Back to home</router-link>
       </div>
@@ -108,7 +119,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, watch } from 'vue'
+import { onMounted, reactive, ref, watch } from 'vue'
 
 import Logo from '../assets/logo.png'
 import Chips from '../components/form/Chips.vue'
@@ -116,12 +127,13 @@ import Field from '../components/form/Field.vue'
 import { CONTACT_METHODS, FORMATS, GRADES, HEARD_FROM, RELATIONSHIPS, SUBJECT_GROUPS, TIMEZONES } from '../lib/options'
 
 const f = reactive({
-  parentName: '',
+  parentFirst: '',
+  parentLast: '',
   relationship: '',
   parentEmail: '',
   parentPhone: '',
   contactMethods: [] as string[],
-  students: [{ name: '', grade: '' }],
+  students: [{ first: '', last: '', grade: '' }],
   school: '',
   subjects: [] as string[],
   subjectsOther: '',
@@ -133,21 +145,29 @@ const f = reactive({
   heardFromOther: '',
   applicantNotes: '',
 })
+const fullName = (first: string, last: string) => `${first.trim()} ${last.trim()}`.trim()
 const honeypot = ref('')
 const errors = reactive<Record<string, string>>({})
 const sending = ref(false)
 const sent = ref(false)
 const submitError = ref('')
 const tried = ref(false)
+// Load the database code while the form is being filled in, so Send is instant.
+onMounted(() => {
+  import('../lib/firebase').catch(() => {})
+  import('firebase/firestore/lite').catch(() => {})
+})
 // After the first submit attempt, re-check as people fix things so stale errors disappear.
 watch(f, () => tried.value && validate(), { deep: true })
 
 function validate() {
   for (const k of Object.keys(errors)) delete errors[k]
-  if (!f.parentName.trim()) errors.parentName = 'Add your name.'
+  if (!f.parentFirst.trim()) errors.parentFirst = 'Add your first name.'
+  if (!f.parentLast.trim()) errors.parentLast = 'Add your last name.'
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.parentEmail.trim())) errors.parentEmail = 'Add an email we can reply to.'
   if (f.parentPhone.replace(/\D/g, '').length < 7) errors.parentPhone = 'Add a phone number.'
-  if (!f.students[0].name.trim()) errors.students = "Add the student's name."
+  if (!f.students[0].first.trim()) errors.studentFirst = "Add the student's first name."
+  if (!f.students[0].last.trim()) errors.studentLast = "Add the student's last name."
   if (!f.subjects.length && !f.subjectsOther.trim()) errors.subjects = 'Pick a subject, or describe it below.'
   return Object.keys(errors).length === 0
 }
@@ -156,7 +176,7 @@ async function submit() {
   submitError.value = ''
   tried.value = true
   if (!validate()) {
-    const firstField: Record<string, string> = { parentName: 'parent-name', parentEmail: 'email', parentPhone: 'phone', students: 'student-0', subjects: 'subjects-label' }
+    const firstField: Record<string, string> = { parentFirst: 'parent-first', parentLast: 'parent-last', parentEmail: 'email', parentPhone: 'phone', studentFirst: 'student-0', studentLast: 'student-last-0', subjects: 'subjects-label' }
     document.getElementById(firstField[Object.keys(errors)[0]])?.scrollIntoView({ block: 'center' })
     document.getElementById(firstField[Object.keys(errors)[0]])?.focus()
     return
@@ -171,11 +191,11 @@ async function submit() {
     await addDoc(collection(db, 'clients'), {
       status: 'new',
       source: 'website',
-      parentName: f.parentName.trim(),
+      parentName: fullName(f.parentFirst, f.parentLast),
       relationship: f.relationship,
       parentEmail: f.parentEmail.trim().toLowerCase(),
       parentPhone: f.parentPhone.trim(),
-      students: f.students.filter((s) => s.name.trim()).map((s) => ({ name: s.name.trim(), grade: s.grade })),
+      students: f.students.filter((s) => s.first.trim()).map((s) => ({ name: fullName(s.first, s.last), grade: s.grade })),
       school: f.school.trim(),
       subjects: f.subjects,
       subjectsOther: f.subjectsOther.trim(),
